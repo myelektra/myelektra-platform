@@ -1,0 +1,1166 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "_description": "All website content for Myelektra.com. Edit text here — no need to touch HTML/React code.",
+  "brand": {
+    "company": "PT. Myelektra Solusi Indonesia",
+    "domain": "myelektra.com",
+    "tagline": "We Build Revenue Systems, Not Just Lead Lists.",
+    "subTagline": "From Buyer Persona to Revenue Pipeline.",
+    "positioning": "Your Revenue Growth Partner",
+    "phone": "+62 21 29636761",
+    "email": "",
+    "address": {
+      "line1": "38th Floor, 88 Office",
+      "line2": "Kota Kasablanka, South Jakarta",
+      "country": "Indonesia"
+    },
+    "hours": "Weekdays / 9:00 – 18:00",
+    "social": {
+      "linkedin": "https://www.linkedin.com/company/3560717",
+      "instagram": "https://www.instagram.com/myelektra/"
+    },
+    "founder": {
+      "name": "Dian Satya, S.E.",
+      "title": "Founder & CEO Myelektra.com",
+      "photo": "https://media.licdn.com/dms/image/v2/D5603AQHa2ssFNQpegA/profile-displayphoto-crop_800_800/B56Z2VjB12GgAM-/0/1776330483600?e=1785974400&v=beta&t=04iVjvHs__Mv4z_LEQnglqcLGaItfyvJsZ0n7uBAAB4",
+      "linkedin": "https://www.linkedin.com/in/diansatya/",
+      "instagram": "https://www.instagram.com/dian_satyaa/"
+    },
+    "logo": {
+      "catboxUrl": "https://files.catbox.moe/ih1ryw.png",
+      "localFile": "public/logo-myelektra.png",
+      "localFileWeebly": "weebly-theme/logo-myelektra.png"
+    }
+  },
+  "navigation": {
+    "desktop": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "Solutions",
+        "path": "/solutions",
+        "submenu": [
+          {
+            "label": "Revenue Intelligence",
+            "path": "/solutions/revenue-intelligence"
+          },
+          {
+            "label": "Pipeline Builder",
+            "path": "/solutions/pipeline-builder"
+          },
+          {
+            "label": "Revenue Engine",
+            "path": "/solutions/revenue-engine"
+          },
+          {
+            "label": "AI Sales Transformation",
+            "path": "/solutions/ai-sales-transformation"
+          },
+          {
+            "label": "Fractional Revenue Office",
+            "path": "/solutions/fractional-revenue-office"
+          }
+        ]
+      },
+      {
+        "label": "Industries",
+        "path": "/industries"
+      },
+      {
+        "label": "Pricing",
+        "path": "/pricing"
+      },
+      {
+        "label": "Academy",
+        "path": "/academy"
+      },
+      {
+        "label": "About",
+        "path": "/about"
+      },
+      {
+        "label": "Contact Us",
+        "path": "/contact",
+        "submenu": [
+          {
+            "label": "Get Quote Here",
+            "path": "/get-quote-here-new"
+          },
+          {
+            "label": "Book Online Meeting",
+            "path": "/consultation"
+          }
+        ]
+      }
+    ],
+    "headerCta": "Book an Online Meeting",
+    "headerCtaPath": "/consultation",
+    "hideFromNav": [
+      "How It Works"
+    ]
+  },
+  "global": {
+    "floatingCta": {
+      "text": "Ready to build your revenue system?",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation",
+      "showAfterScrollPx": 600
+    },
+    "backToTop": {
+      "showAfterScrollPx": 500
+    },
+    "cookieBanner": {
+      "text": "We use cookies to improve your experience. By continuing to use this site, you agree to our privacy policy.",
+      "acceptLabel": "Accept",
+      "learnMoreLabel": "Learn More"
+    },
+    "scrollAnimation": {
+      "enabled": true
+    }
+  },
+  "homepage": {
+    "hero": {
+      "badge": "Your Revenue Growth Partner",
+      "headline": "We Build Revenue Systems, Not Just Lead Lists.",
+      "headlineHighlight": "Not Just Lead Lists.",
+      "subtitle": "Myelektra helps B2B companies identify the right buyers, start meaningful sales conversations, manage opportunities in HubSpot, and build a more predictable revenue pipeline.",
+      "ctaPrimary": {
+        "label": "Book an Online Meeting",
+        "path": "/consultation"
+      },
+      "ctaSecondary": {
+        "label": "Explore Our Solutions",
+        "path": "/solutions"
+      }
+    },
+    "journey": {
+      "sectionLabel": "From Buyer Persona to Revenue Pipeline",
+      "headline": "The Revenue Growth Journey",
+      "intro": "Finding contact data is only the beginning. Sustainable B2B growth requires the right market, the right decision-makers, consistent engagement, disciplined follow-up, accurate CRM data, and a measurable sales process. Myelektra brings these elements together in one integrated revenue growth system.",
+      "cards": [
+        {
+          "icon": "target",
+          "title": "Revenue Intelligence",
+          "description": "Identify your ideal customer profile, priority industries, target accounts, and decision-makers."
+        },
+        {
+          "icon": "robot",
+          "title": "AI Agent Prospecting",
+          "description": "Use HubSpot-supported research and AI-assisted workflows to identify and personalize engagement with relevant prospects."
+        },
+        {
+          "icon": "headset",
+          "title": "Human SDR Engagement",
+          "description": "Our SDR team follows up through email and phone, qualifies interest, handles initial objections, and works toward qualified meetings."
+        },
+        {
+          "icon": "database",
+          "title": "HubSpot CRM",
+          "description": "Organize contacts, activities, lead status, pipelines, follow-ups, reporting, and sales opportunities in one system."
+        },
+        {
+          "icon": "chart",
+          "title": "Revenue Operations",
+          "description": "Measure conversion, manage pipeline progress, improve sales processes, and turn activity into actionable revenue insights."
+        }
+      ]
+    },
+    "achievements": {
+      "headline": "What We Help You Achieve",
+      "items": [
+        {
+          "icon": "bullseye",
+          "title": "Better-Fit Prospects",
+          "description": "Reach companies and decision-makers that match your ideal customer profile and buyer persona."
+        },
+        {
+          "icon": "chat",
+          "title": "More Sales Conversations",
+          "description": "Combine AI-assisted research with personalized email, LinkedIn, and human SDR engagement."
+        },
+        {
+          "icon": "funnel",
+          "title": "A Stronger Pipeline",
+          "description": "Capture prospect activity, qualification status, meetings, and opportunities inside HubSpot."
+        },
+        {
+          "icon": "eye",
+          "title": "Clearer Revenue Visibility",
+          "description": "Monitor leads, conversations, meetings, opportunities, and pipeline performance through structured reporting."
+        },
+        {
+          "icon": "layers",
+          "title": "Scalable Sales Operations",
+          "description": "Build a repeatable system that supports your internal sales team as the business grows."
+        }
+      ]
+    },
+    "solutionsOverview": {
+      "headline": "Our Revenue Growth Solutions"
+    },
+    "countryTargeting": {
+      "headline": "One Country. One Focused Campaign.",
+      "intro": "Every campaign targets one selected country to maintain relevance, personalization, and research quality.",
+      "maxContactsNote": "Maximum: 300 verified contacts.",
+      "personasLabel": "Recommended buyer personas:",
+      "disclaimer": "Actual contact volume may be lower when the buyer persona, industry, company size, or geographic criteria are highly specialized. Myelektra prioritizes relevance and contact quality over filling an arbitrary quota."
+    },
+    "industriesSection": {
+      "headline": "Industries We Serve"
+    },
+    "experience": {
+      "headline": "Our Experience"
+    },
+    "whyMyelektraSection": {
+      "headline": "Why Myelektra"
+    },
+    "academyTeaser": {
+      "headline": "Myelektra Academy",
+      "subheadline": "Build an AI-Enabled B2B Sales Team",
+      "description": "Myelektra Academy helps founders, sales leaders, business development teams, and corporate sales professionals adopt modern B2B selling practices.",
+      "ctaLabel": "Explore Myelektra Academy",
+      "ctaPath": "/academy",
+      "pricing": {
+        "publicClasses": {
+          "price": "From USD xx",
+          "per": "per participant",
+          "badgeLabel": "Public Classes"
+        },
+        "corporateTraining": {
+          "price": "From USD x,xxx",
+          "per": "per batch",
+          "badgeLabel": "Corporate Training"
+        }
+      }
+    },
+    "finalCta": {
+      "headline": "Built for Companies That Want More Than Contact Data",
+      "body": "You do not need another spreadsheet filled with names. You need a clear target market, relevant decision-makers, professional engagement, disciplined follow-up, reliable CRM data, and visibility into your revenue pipeline. That is the system Myelektra builds.",
+      "subheadline": "Ready to Build Your Revenue System?",
+      "subbody": "Start with a discovery session to review your target market, current sales process, HubSpot requirements, and growth priorities.",
+      "ctaLabel": "Book an Online Meeting",
+      "ctaPath": "/consultation"
+    }
+  },
+  "solutions": [
+    {
+      "id": "revenue-intelligence",
+      "name": "Bronze (Revenue Intelligence) ",
+      "icon": "bronze",
+      "price": "[Book Meeting for Pricing] per project",
+      "description": "Build a focused market-entry and prospecting foundation before launching outreach.",
+      "features": [
+        "ICP development and market-entry analysis",
+        "Buyer persona mapping with decision-making roles",
+        "Up to 300 verified contacts per target country",
+        "Revenue opportunity report with priority recommendations"
+      ],
+      "bestFor": "Companies that need to define their target market, buyer personas, and prospecting strategy before investing in outreach.",
+      "cta": "Start Revenue Intelligence",
+      "isPopular": false,
+      "steps": [
+        {
+          "title": "Discover",
+          "description": "We analyze your business goals, market, product, and sales cycle."
+        },
+        {
+          "title": "Identify",
+          "description": "We define target industries, company criteria, and decision-making roles."
+        },
+        {
+          "title": "Deliver",
+          "description": "You receive a complete ICP, buyer personas, verified contacts, and a revenue opportunity report."
+        }
+      ]
+    },
+    {
+      "id": "pipeline-builder",
+      "name": "Silver (Pipeline Builder)",
+      "icon": "silver",
+      "price": "[Book Meeting for Pricing] per month",
+      "description": "Turn approved buyer personas and target accounts into qualified sales conversations.",
+      "features": [
+        "HubSpot CRM setup and configuration",
+        "AI-assisted prospecting and personalization",
+        "Human SDR follow-up via email and phone",
+        "Weekly reporting and activity dashboard"
+      ],
+      "bestFor": "Companies with defined target markets that need consistent, professional outreach and qualified meetings.",
+      "cta": "Build My Pipeline",
+      "isPopular": false,
+      "steps": [
+        {
+          "title": "Setup",
+          "description": "We configure HubSpot CRM with your contacts, workflows, and tracking."
+        },
+        {
+          "title": "Engage",
+          "description": "AI-assisted personalization and human SDR outreach across agreed channels."
+        },
+        {
+          "title": "Qualify",
+          "description": "Prospects are classified by interest, need, timing, and meeting potential."
+        },
+        {
+          "title": "Report",
+          "description": "Weekly reports on activity, conversations, meetings, and next actions."
+        }
+      ]
+    },
+    {
+      "id": "revenue-engine",
+      "name": "Gold (Revenue Engine)",
+      "icon": "gold",
+      "price": "[Book Meeting for Pricing] per month",
+      "description": "Build and manage an integrated system connecting prospecting, HubSpot, SDR activity, pipeline management, and revenue reporting.",
+      "features": [
+        "Everything in Pipeline Builder",
+        "Workflow automation and process design",
+        "Pipeline design and management",
+        "Revenue forecasting and performance insights"
+      ],
+      "bestFor": "Companies ready to build a complete, measurable revenue system with pipeline visibility and forecasting.",
+      "cta": "Build My Revenue Engine",
+      "isPopular": true,
+      "steps": [
+        {
+          "title": "Build",
+          "description": "We create the full revenue system — CRM, workflows, pipeline stages, and reporting."
+        },
+        {
+          "title": "Operate",
+          "description": "Our team manages prospecting, SDR outreach, qualification, and pipeline tracking."
+        },
+        {
+          "title": "Optimize",
+          "description": "Continuous improvement based on conversion data, pipeline movement, and feedback."
+        },
+        {
+          "title": "Report",
+          "description": "Executive-level reporting on pipeline health, forecasts, and revenue progress."
+        }
+      ]
+    },
+    {
+      "id": "ai-sales-transformation",
+      "name": "Patinum (AI Sales Transformation)",
+      "icon": "platinum",
+      "price": "[Book Meeting for Pricing] per project",
+      "description": "Transform manual sales activities into AI-assisted, measurable, and scalable workflows.",
+      "features": [
+        "AI readiness assessment and roadmap",
+        "HubSpot AI setup and configuration",
+        "AI sales playbook development",
+        "Sales team training and onboarding"
+      ],
+      "bestFor": "Companies wanting to modernize their sales process with AI tools, automation, and data-driven decision making.",
+      "cta": "Transform My Sales Team",
+      "isPopular": false,
+      "steps": [
+        {
+          "title": "Assess",
+          "description": "We evaluate your current sales process, tools, and AI readiness."
+        },
+        {
+          "title": "Design",
+          "description": "We create an AI transformation roadmap and playbook tailored to your team."
+        },
+        {
+          "title": "Implement",
+          "description": "We configure AI tools, workflows, and automation in HubSpot."
+        },
+        {
+          "title": "Train",
+          "description": "Your team is trained on AI-assisted selling practices and tools."
+        }
+      ]
+    },
+    {
+      "id": "fractional-revenue-office",
+      "name": "Diamond (Fractional Revenue Office)",
+      "icon": "diamond",
+      "price": "[Book Meeting for Pricing] per month",
+      "description": "Add experienced revenue leadership, RevOps support, SDR management, and executive reporting.",
+      "features": [
+        "Revenue strategy and planning",
+        "SDR team management and coaching",
+        "Quarterly growth planning and review",
+        "Executive reporting and board-ready insights"
+      ],
+      "bestFor": "Companies that need senior revenue leadership and strategic guidance without a full-time executive hire.",
+      "cta": "Talk to a Revenue Advisor",
+      "isPopular": false,
+      "steps": [
+        {
+          "title": "Strategize",
+          "description": "We develop a revenue growth strategy aligned with your business objectives."
+        },
+        {
+          "title": "Lead",
+          "description": "Our fractional leaders manage SDR teams, processes, and pipeline."
+        },
+        {
+          "title": "Scale",
+          "description": "Quarterly planning and optimization to drive sustainable growth."
+        },
+        {
+          "title": "Report",
+          "description": "Board-ready reporting on revenue performance, pipeline, and forecasts."
+        }
+      ]
+    }
+  ],
+  "solutionsPage": {
+    "hero": {
+      "headline": "Book an Online Meeting",
+      "subtitle": "From market intelligence to pipeline management — choose the solution that matches your growth stage."
+    },
+    "includedLabel": "Included:",
+    "popularBadge": "Most Popular",
+    "cta": {
+      "headline": "Not sure which solution fits?",
+      "body": "Book an Online Meeting and we will help you find the right starting point.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    }
+  },
+  "solutionDetailPage": {
+    "breadcrumb": {
+      "home": "Home",
+      "solutions": "Solutions"
+    },
+    "includedHeadline": "What's Included",
+    "bestForHeadline": "Best For",
+    "howItWorksHeadline": "How It Works",
+    "ctaPrefix": "Ready to Get Started with",
+    "ctaSuffix": "?",
+    "ctaBody": "Book a discovery session to discuss your requirements, timeline, and expected outcomes.",
+    "relatedSolutionsHeadline": "Related Solutions",
+    "notFoundMessage": "Solution Not Found",
+    "notFoundBackLink": "Back to Solutions"
+  },
+  "industries": [
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "icon": "manufacturing",
+      "description": "Connect with plant leadership, operations teams, procurement decision-makers, supply-chain leaders, and general management.",
+      "personas": [
+        "Plant Director",
+        "Operations Manager",
+        "Procurement Head",
+        "Supply Chain Manager",
+        "General Manager"
+      ]
+    },
+    {
+      "id": "saas-technology",
+      "name": "SaaS and Technology",
+      "icon": "saas",
+      "description": "Reach founders and leaders responsible for growth, sales, operations, technology, and revenue.",
+      "personas": [
+        "CEO or Founder",
+        "COO or CTO",
+        "Head of Sales",
+        "Head of Marketing",
+        "RevOps or Head of Growth"
+      ]
+    },
+    {
+      "id": "banking-finance",
+      "name": "Banking and Financial Services",
+      "icon": "banking",
+      "description": "Identify senior stakeholders involved in digital transformation, technology, risk, procurement, and strategic partnerships.",
+      "personas": [
+        "IT Director",
+        "Digital Banking Head",
+        "Risk Director",
+        "Procurement Head",
+        "Partnership Director"
+      ]
+    },
+    {
+      "id": "bpo-services",
+      "name": "BPO and Business Services",
+      "icon": "bpo",
+      "description": "Reach leadership responsible for operations, human resources, shared services, customer experience, and client delivery.",
+      "personas": [
+        "COO",
+        "HR Director",
+        "Shared Services Head",
+        "Customer Experience Head",
+        "Client Delivery Head"
+      ]
+    },
+    {
+      "id": "professional-services",
+      "name": "Professional Services and Consulting",
+      "icon": "consulting",
+      "description": "Connect with partners and commercial leaders responsible for business development, client acquisition, and strategic growth.",
+      "personas": [
+        "Managing Partner",
+        "Director",
+        "Business Development Head",
+        "Engagement Manager",
+        "Client Partner"
+      ]
+    }
+  ],
+  "industriesPage": {
+    "hero": {
+      "headline": "Industries We Serve",
+      "subtitle": "Myelektra provides targeted revenue growth solutions across key B2B industries, connecting you with the decision-makers who drive purchasing decisions."
+    },
+    "personasHeadline": "Buyer Personas",
+    "cta": {
+      "headline": "Targeting a Specific Industry?",
+      "body": "Book an Online Meeting to discuss your industry, target market, and how Myelektra can help you reach the right decision-makers.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "headline": "How Myelektra Works",
+      "subtitle": "A structured, eight-step process that takes you from discovery to a measurable and continuously improving revenue pipeline."
+    },
+    "summaryHeadline": "The Complete Revenue Growth Flow",
+    "outputLabel": "Output",
+    "cta": {
+      "headline": "Ready to Start Your Revenue Growth Journey?",
+      "body": "Begin with a discovery session and let us build a revenue system tailored to your business.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    },
+    "steps": [
+      {
+        "number": 1,
+        "title": "Discover",
+        "description": "We begin with your business goals, market, product, sales cycle, ideal customer profile, and current revenue challenges.",
+        "output": "Revenue discovery brief"
+      },
+      {
+        "number": 2,
+        "title": "Identify",
+        "description": "We define target industries, company criteria, decision-making roles, buyer pain points, and priority territories.",
+        "output": "Approved ICP and buyer persona"
+      },
+      {
+        "number": 3,
+        "title": "Research",
+        "description": "Our team uses HubSpot-supported prospecting workflows to identify relevant target accounts and contacts.",
+        "output": "Proposed prospect list"
+      },
+      {
+        "number": 4,
+        "title": "Validate",
+        "description": "You review the target list, provide feedback, and approve the accounts and buyer personas before execution.",
+        "output": "Approved campaign database"
+      },
+      {
+        "number": 5,
+        "title": "Build the System",
+        "description": "Contacts are structured in HubSpot with lifecycle stages, lead statuses, properties, tags, scoring criteria, and follow-up workflows.",
+        "output": "Campaign-ready CRM"
+      },
+      {
+        "number": 6,
+        "title": "Engage",
+        "description": "AI-assisted personalization and human SDR outreach are used across the agreed channels.",
+        "output": "Active sales conversations"
+      },
+      {
+        "number": 7,
+        "title": "Qualify",
+        "description": "Prospects are classified according to contact validity, interest, need, timing, and meeting potential.",
+        "output": "Qualified leads and meeting opportunities"
+      },
+      {
+        "number": 8,
+        "title": "Grow",
+        "description": "We monitor meetings, opportunities, pipeline movement, conversion performance, and recommended next actions.",
+        "output": "A measurable and continuously improving revenue pipeline"
+      }
+    ]
+  },
+  "pricingPage": {
+    "hero": {
+      "headline": "Transparent Pricing for Revenue Growth",
+      "subtitle": "Clear, straightforward pricing with no hidden fees. Choose the solution that matches your growth stage and budget."
+    },
+    "popularBadge": "Most Popular",
+    "comparisonHeadline": "Solution Comparison",
+    "cta": {
+      "headline": "Need Help Choosing the Right Solution?",
+      "body": "Book an Online Meeting and we will help you determine the best starting point for your growth goals.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    },
+    "comparisonFeatures": [
+      {
+        "feature": "ICP Development",
+        "mapping": [
+          "revenue-intelligence",
+          "pipeline-builder",
+          "revenue-engine",
+          "ai-sales-transformation",
+          "fractional-revenue-office"
+        ]
+      },
+      {
+        "feature": "Verified Contacts",
+        "mapping": [
+          "revenue-intelligence",
+          "pipeline-builder",
+          "revenue-engine",
+          "fractional-revenue-office"
+        ]
+      },
+      {
+        "feature": "HubSpot CRM Setup",
+        "mapping": [
+          "pipeline-builder",
+          "revenue-engine",
+          "ai-sales-transformation",
+          "fractional-revenue-office"
+        ]
+      },
+      {
+        "feature": "SDR Outreach",
+        "mapping": [
+          "pipeline-builder",
+          "revenue-engine",
+          "fractional-revenue-office"
+        ]
+      },
+      {
+        "feature": "Pipeline Management",
+        "mapping": [
+          "revenue-engine",
+          "fractional-revenue-office"
+        ]
+      },
+      {
+        "feature": "Revenue Forecasting",
+        "mapping": [
+          "revenue-engine",
+          "fractional-revenue-office"
+        ]
+      },
+      {
+        "feature": "AI Sales Playbook",
+        "mapping": [
+          "ai-sales-transformation"
+        ]
+      },
+      {
+        "feature": "Revenue Leadership",
+        "mapping": [
+          "fractional-revenue-office"
+        ]
+      }
+    ]
+  },
+  "academy": {
+    "hero": {
+      "headline": "Myelektra Academy",
+      "subheadline": "Build an AI-Enabled B2B Sales Team",
+      "description": "Myelektra Academy helps founders, sales leaders, business development teams, and corporate sales professionals adopt modern B2B selling practices through structured training programs."
+    },
+    "topicsHeadline": "Training Topics",
+    "topicsSubtitle": "Each training module is designed for practical application — your team will leave with actionable frameworks, not just theory.",
+    "pricingHeadline": "Academy Pricing",
+    "topics": [
+      "Building an Ideal Customer Profile (ICP)",
+      "Buyer Persona Development for B2B",
+      "AI-Assisted Prospecting Workflows",
+      "HubSpot CRM Setup and Best Practices",
+      "Email Outreach That Gets Replies",
+      "SDR Fundamentals: From Call to Qualification",
+      "Pipeline Management and Forecasting",
+      "Revenue Operations (RevOps) Essentials",
+      "Using AI for Sales Enablement",
+      "Building a Repeatable Revenue System"
+    ],
+    "publicClasses": {
+      "name": "Public Classes",
+      "price": "USD xx",
+      "priceDetail": "Starting price per participant",
+      "features": [
+        "Live instructor-led sessions",
+        "Interactive workshops",
+        "Practical frameworks and templates",
+        "Certificate of completion"
+      ],
+      "cta": "Register for Public Class",
+      "ctaPath": "/consultation"
+    },
+    "corporateTraining": {
+      "name": "Corporate Training",
+      "price": "USD x,xxx",
+      "priceDetail": "Starting price per batch",
+      "features": [
+        "Customized for your team",
+        "On-site or virtual delivery",
+        "Company-specific use cases",
+        "Post-training support"
+      ],
+      "cta": "Enquire About Corporate Training",
+      "ctaPath": "/consultation",
+      "badge": "Recommended"
+    },
+    "cta": {
+      "headline": "Invest in Your Sales Team's Growth",
+      "body": "Contact us to discuss a training program tailored to your team's needs and growth objectives.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "headline": "About Myelektra",
+      "subtitle": "We are an AI-powered revenue growth partner helping B2B companies move from scattered prospecting to structured, measurable revenue systems."
+    },
+    "story": {
+      "label": "Our Story",
+      "headline": "Built for Companies That Need More Than Contact Data",
+      "paragraph1": "Myelektra was founded with a clear observation: most B2B companies struggle not because they lack data, but because they lack a system. They have spreadsheets of contacts but no structured process to identify the right buyers, engage them professionally, qualify their interest, and turn conversations into revenue.",
+      "paragraph2": "Based in Jakarta, Indonesia, we serve B2B companies across Southeast Asia, Australia, and selected global markets. Our approach combines AI-assisted research and prospecting with human SDR engagement, all organized around HubSpot CRM — so every activity, conversation, and opportunity is tracked and measurable.",
+      "paragraph3": "We do not sell databases. We build revenue systems — from ideal customer profiles and buyer personas to qualified meetings and pipeline visibility. Every service we offer is designed to move your business closer to predictable, sustainable revenue growth."
+    },
+    "stats": [
+      {
+        "value": "7+",
+        "label": "Target countries across Asia-Pacific and beyond"
+      },
+      {
+        "value": "5",
+        "label": "Integrated revenue growth solutions"
+      },
+      {
+        "value": "8",
+        "label": "Step revenue growth process from discovery to pipeline"
+      },
+      {
+        "value": "1",
+        "label": "HubSpot-centered execution system"
+      }
+    ],
+    "mission": {
+      "label": "Our Mission",
+      "headline": "From Buyer Persona to Revenue Pipeline",
+      "body": "We exist to help B2B companies stop guessing and start building. With the right market intelligence, structured prospecting, professional engagement, disciplined CRM practices, and clear pipeline visibility, revenue growth becomes a system — not a hope."
+    },
+    "cta": {
+      "headline": "Let's Build Your Revenue System",
+      "body": "Start with a discovery session to explore how Myelektra can support your revenue growth.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    }
+  },
+  "whyMyelektra": [
+    {
+      "icon": "brain",
+      "title": "AI and Human Expertise",
+      "description": "Technology improves speed and insight. Human judgment protects relevance, communication quality, and professional relationships."
+    },
+    {
+      "icon": "hubspot",
+      "title": "HubSpot-Centered Execution",
+      "description": "Prospecting, qualification, follow-up, lead status, pipeline activities, and reporting are organized around a structured CRM system."
+    },
+    {
+      "icon": "quality",
+      "title": "Quality Before Quantity",
+      "description": "We focus on buyer-persona fit and useful business conversations—not mass contact collection."
+    },
+    {
+      "icon": "report",
+      "title": "Transparent Reporting",
+      "description": "Clients receive clear visibility into campaign activity, lead categories, engagement, meetings, and next actions."
+    },
+    {
+      "icon": "globe",
+      "title": "Regional Market Understanding",
+      "description": "Based in Jakarta, Myelektra supports B2B growth across Indonesia, Southeast Asia, Australia, and selected global markets."
+    },
+    {
+      "icon": "revenue",
+      "title": "Revenue-Focused Strategy",
+      "description": "Every service is designed to improve the path from target account to conversation, meeting, opportunity, and revenue."
+    }
+  ],
+  "countries": [
+    {
+      "name": "Indonesia",
+      "flagAccent": "flag-accent-indonesia",
+      "personas": [
+        "President Director",
+        "Operations Director",
+        "IT Director",
+        "Procurement Head",
+        "Business Development Manager"
+      ]
+    },
+    {
+      "name": "Malaysia",
+      "flagAccent": "flag-accent-malaysia",
+      "personas": [
+        "Managing Director",
+        "Head of Operations",
+        "CTO",
+        "Supply Chain Director",
+        "Sales Director"
+      ]
+    },
+    {
+      "name": "Singapore",
+      "flagAccent": "flag-accent-singapore",
+      "personas": [
+        "CEO",
+        "VP of Sales",
+        "Head of Digital",
+        "Procurement Director",
+        "Partnership Lead"
+      ]
+    },
+    {
+      "name": "Australia",
+      "flagAccent": "flag-accent-australia",
+      "personas": [
+        "General Manager",
+        "Head of Growth",
+        "COO",
+        "IT Manager",
+        "Commercial Director"
+      ]
+    },
+    {
+      "name": "Europe",
+      "flagAccent": "flag-accent-europe",
+      "personas": [
+        "Country Manager",
+        "Head of Sales",
+        "Procurement Lead",
+        "Operations Head",
+        "Digital Transformation Lead"
+      ]
+    },
+    {
+      "name": "United States",
+      "flagAccent": "flag-accent-usa",
+      "personas": [
+        "VP of Sales",
+        "Director of Operations",
+        "Head of Revenue",
+        "CIO",
+        "Business Development VP"
+      ]
+    },
+    {
+      "name": "Middle East",
+      "flagAccent": "flag-accent-middle-east",
+      "personas": [
+        "Country Director",
+        "Operations Head",
+        "IT Director",
+        "Procurement Manager",
+        "Partnership Director"
+      ]
+    }
+  ],
+  "contactPage": {
+    "hero": {
+      "headline": "Contact Us",
+      "subtitle": "Get in touch with our team to discuss how Myelektra can help grow your revenue."
+    },
+    "officeHeadline": "Corporate Office",
+    "contactInfoHeadline": "Contact Info",
+    "hoursHeadline": "Hours",
+    "ctaButtons": [
+      {
+        "label": "Get Quote Here",
+        "path": "/get-quote-here-new",
+        "variant": "primary"
+      },
+      {
+        "label": "Book Online Meeting",
+        "path": "/consultation",
+        "variant": "outline"
+      }
+    ]
+  },
+  "consultationPage": {
+    "hero": {
+      "headline": "Book an Online Meeting",
+      "subtitle": "Start with a discovery session to review your target market, current sales process, HubSpot requirements, and growth priorities."
+    },
+    "scheduleHeadline": "Schedule Your Discovery Session",
+    "scheduleSubtitle": "Pick a time that works for you below.",
+    "hubspot": {
+      "meetingsUrl": "https://app.hubspot.com/meetings/admin110/online-meeting-with-myelektra-?embed=true"
+    },
+    "sidebarWhatToExpect": {
+      "headline": "What to Expect",
+      "items": [
+        {
+          "icon": "clock",
+          "title": "30-Minute Session",
+          "description": "Focused discovery conversation"
+        },
+        {
+          "icon": "shield",
+          "title": "No Commitment",
+          "description": "Zero obligation to proceed"
+        }
+      ]
+    },
+    "sidebarQuickLinks": {
+      "headline": "Quick Links"
+    }
+  },
+  "getQuotePage": {
+    "hero": {
+      "headline": "Get a Quote",
+      "subtitle": "Tell us about your revenue growth needs and we'll provide a tailored quote."
+    },
+    "formHeadline": "Request a Custom Quote",
+    "formSubtitle": "Fill out the form below and our team will get back to you within 1-2 business days.",
+    "hubspot": {
+      "portalId": 3306812,
+      "formId": "a5276c78-f3c3-4eb1-9434-7d359384f6b0"
+    },
+    "sidebar": {
+      "headline": "What You'll Get",
+      "items": [
+        "Custom pricing based on your needs",
+        "Detailed scope of work",
+        "Timeline and deliverables",
+        "No-obligation discussion"
+      ]
+    },
+    "cta": {
+      "headline": "Ready to Grow Your Revenue?",
+      "body": "Start with a discovery session and let us build a revenue system tailored to your business.",
+      "buttonLabel": "Book an Online Meeting",
+      "buttonPath": "/consultation"
+    }
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "",
+        "type": "brand",
+        "links": []
+      },
+      {
+        "title": "Solutions",
+        "type": "solutions",
+        "links": []
+      },
+      {
+        "title": "Company",
+        "type": "company",
+        "links": [
+          {
+            "label": "About",
+            "path": "/about"
+          },
+          {
+            "label": "Industries",
+            "path": "/industries"
+          },
+          {
+            "label": "Academy",
+            "path": "/academy"
+          }
+        ]
+      },
+      {
+        "title": "Contact",
+        "type": "contact",
+        "links": [
+          {
+            "label": "Get Quote Here",
+            "path": "/get-quote-here-new"
+          },
+          {
+            "label": "Book Online Meeting",
+            "path": "/consultation"
+          },
+          {
+            "label": "Book a Revenue Consultation →",
+            "path": "/consultation",
+            "highlight": true
+          }
+        ]
+      }
+    ],
+    "copyright": "© {year} Myelektra.com. All rights reserved."
+  },
+  "disclaimer": "Meetings and revenue outcomes are not guaranteed. Results depend on market conditions, offer relevance, buyer readiness, domain reputation, and the client's sales process.",
+  "clientLogos": [
+    {
+      "src": "https://files.catbox.moe/t5y3dl.png",
+      "alt": "1Datapipe"
+    },
+    {
+      "src": "https://files.catbox.moe/4a7p1v.png",
+      "alt": "Adins"
+    },
+    {
+      "src": "https://files.catbox.moe/3a5cc8.png",
+      "alt": "Armourzero"
+    },
+    {
+      "src": "https://files.catbox.moe/o9aqso.png",
+      "alt": "Bigbox"
+    },
+    {
+      "src": "https://files.catbox.moe/hl3ou5.png",
+      "alt": "Cacafly"
+    },
+    {
+      "src": "https://files.catbox.moe/r2vdt4.png",
+      "alt": "Codemi"
+    },
+    {
+      "src": "https://files.catbox.moe/pmthp8.png",
+      "alt": "Convergence"
+    },
+    {
+      "src": "https://files.catbox.moe/gfp8is.jpeg",
+      "alt": "Daiko"
+    },
+    {
+      "src": "https://files.catbox.moe/ovg7oa.png",
+      "alt": "DataOn"
+    },
+    {
+      "src": "https://files.catbox.moe/omzx89.png",
+      "alt": "Disprz"
+    },
+    {
+      "src": "https://files.catbox.moe/iit9rv.png",
+      "alt": "Epicor"
+    },
+    {
+      "src": "https://files.catbox.moe/akbnd5.jpeg",
+      "alt": "Evolusi 3D"
+    },
+    {
+      "src": "https://files.catbox.moe/hfiaab.webp",
+      "alt": "Flexofast"
+    },
+    {
+      "src": "https://files.catbox.moe/g1a90h.png",
+      "alt": "Fujifilm"
+    },
+    {
+      "src": "https://files.catbox.moe/5vqf5u.png",
+      "alt": "Funding Societies"
+    },
+    {
+      "src": "https://files.catbox.moe/s072ef.png",
+      "alt": "Geek Hunter"
+    },
+    {
+      "src": "https://files.catbox.moe/6w5ojl.jpg",
+      "alt": "Hexagon"
+    },
+    {
+      "src": "https://files.catbox.moe/0ebc1m.png",
+      "alt": "Honeywell"
+    },
+    {
+      "src": "https://files.catbox.moe/mtq977.jpg",
+      "alt": "Ideoworks"
+    },
+    {
+      "src": "https://files.catbox.moe/69srar.png",
+      "alt": "Integrated Retail"
+    },
+    {
+      "src": "https://files.catbox.moe/wbatv7.png",
+      "alt": "Liberty Society"
+    },
+    {
+      "src": "https://files.catbox.moe/y5vr2i.png",
+      "alt": "Lindungihutan"
+    },
+    {
+      "src": "https://files.catbox.moe/2kl9g9.webp",
+      "alt": "Lion Parcel"
+    },
+    {
+      "src": "https://files.catbox.moe/0e6mog.png",
+      "alt": "Metrodata"
+    },
+    {
+      "src": "https://files.catbox.moe/9qtku6.jpg",
+      "alt": "Mileapp"
+    },
+    {
+      "src": "https://files.catbox.moe/n2istf.png",
+      "alt": "Moodah"
+    },
+    {
+      "src": "https://files.catbox.moe/3nr01z.png",
+      "alt": "Myrobin"
+    },
+    {
+      "src": "https://files.catbox.moe/hfrhgp.png",
+      "alt": "Parker Hannifin"
+    },
+    {
+      "src": "https://files.catbox.moe/z73gdq.png",
+      "alt": "Practo"
+    },
+    {
+      "src": "https://files.catbox.moe/ioq9fq.png",
+      "alt": "PTI Group"
+    },
+    {
+      "src": "https://files.catbox.moe/ikoa54.jpg",
+      "alt": "Qiscus"
+    },
+    {
+      "src": "https://files.catbox.moe/l4zmq5.png",
+      "alt": "Ruangguru"
+    },
+    {
+      "src": "https://files.catbox.moe/3mvnu8.jpg",
+      "alt": "Runchise"
+    },
+    {
+      "src": "https://files.catbox.moe/202ttd.png",
+      "alt": "Shipper"
+    },
+    {
+      "src": "https://files.catbox.moe/99mbkp.png",
+      "alt": "SOS"
+    },
+    {
+      "src": "https://files.catbox.moe/ngvhnl.png",
+      "alt": "Staffinc"
+    },
+    {
+      "src": "https://files.catbox.moe/be3jyg.png",
+      "alt": "The Class Foundation"
+    },
+    {
+      "src": "https://files.catbox.moe/j8su5l.png",
+      "alt": "Tjetak"
+    },
+    {
+      "src": "https://files.catbox.moe/serbx5.png",
+      "alt": "Turnitin"
+    },
+    {
+      "src": "https://files.catbox.moe/wk1t9e.png",
+      "alt": "Zilingo"
+    }
+  ]
+}

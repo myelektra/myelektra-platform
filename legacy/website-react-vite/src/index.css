@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "../weebly-theme/main_style.css" layer(base);
+
+@theme {
+  --color-navy: #0F1B2D;
+  --color-navy-dark: #0B1120;
+  --color-blue: #1A73E8;
+  --color-blue-hover: #1558B0;
+  --color-teal: #1877F2;
+  --color-teal-hover: #1558B0;
+  --color-bg-light: #F7F9FC;
+  --color-bg-dark: #0B1120;
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #6B7280;
+  --color-text-dark: #E8ECF1;
+  --color-border: #E2E8F0;
+  --color-gold: #FFB800;
+  --font-heading: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Source Code Pro", monospace;
+}
+
+/* ════════════════════════════════════════
+   Web Typography — Improvements
+   ════════════════════════════════════════ */
+
+/* Prevent orphans, balance headline wraps */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Prose utility: comfortable reading width */
+.prose {
+  max-width: 65ch;
+}
+
+/* Content block width constraint */
+.text-block {
+  max-width: 65ch;
+}
+
+/* Override 14px body copy from main_style.css → 15px for readability */
+.card-desc,
+.card-desc-dark,
+.feature-item {
+  font-size: 15px;
+}
+
+/* Consistent secondary text color override for dark cards */
+.card-desc-dark {
+  color: rgba(232, 236, 241, 0.75);
+}
+
+/* Smooth scrollbar hiding utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg-light); }
+::-webkit-scrollbar-thumb { background: var(--color-text-secondary); border-radius: 4px; }
+
+/* Selection */
+::selection {
+  background: var(--color-teal);
+  color: white;
+}
+
+/* Hero Pattern Overlay */
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(26, 115, 232, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 200, 150, 0.06) 0%, transparent 50%);
+  background-size: cover;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Gradient Orb Animation */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.orb-1 {
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for card grids */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+.stagger-8 { transition-delay: 0.8s; }
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* Button transitions */
+.btn-transition {
+  transition: all 0.25s ease;
+}
+
+/* Timeline connector */
+.timeline-connector {
+  position: relative;
+}
+.timeline-connector::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 48px;
+  bottom: -24px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-teal), var(--color-blue));
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-teal), var(--color-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating CTA bar */
+.floating-cta {
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.floating-cta.show {
+  transform: translateY(0);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Back to top button */
+.back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Country card flag accent */
+.flag-accent-indonesia { border-top: 3px solid #FF0000; }
+.flag-accent-malaysia { border-top: 3px solid #006600; }
+.flag-accent-singapore { border-top: 3px solid #EF3340; }
+.flag-accent-australia { border-top: 3px solid #00008B; }
+.flag-accent-europe { border-top: 3px solid #003399; }
+.flag-accent-usa { border-top: 3px solid #B22234; }
+.flag-accent-middle-east { border-top: 3px solid #006C35; }

@@ -1,0 +1,117 @@
+# =============================================================================
+# Myelektra Website - Cloudflare Workers Configuration
+# =============================================================================
+# Purpose: Deploy Astro website with TinaCMS visual editing support
+# Target: Cloudflare Workers (required for TinaCMS dynamic islands)
+# =============================================================================
+
+name = "myelektra"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+main = "dist/_worker.js"
+
+# =============================================================================
+# Static Assets
+# =============================================================================
+
+[site]
+bucket = "./dist"
+
+# =============================================================================
+# D1 Database (Business Data Only)
+# =============================================================================
+
+[[d1_databases]]
+binding = "DB"
+database_name = "myelektra-business"
+database_id = "<D1_DATABASE_ID>"
+
+# =============================================================================
+# R2 Storage (Media Assets)
+# =============================================================================
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "myelektra-media"
+
+# =============================================================================
+# KV Namespaces (Caching)
+# =============================================================================
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "<KV_NAMESPACE_ID>"
+
+# =============================================================================
+# Environment Variables
+# =============================================================================
+
+[vars]
+# TinaCMS Configuration
+TINA_CLIENT_ID = "<TINA_CLIENT_ID>"
+TINA_TOKEN = "<TINA_TOKEN>"
+
+# Analytics
+PUBLIC_GA_ID = "G-XXXXXXXXXX"
+
+# HubSpot
+PUBLIC_HUBSPOT_PORTAL_ID = "3306812"
+
+# =============================================================================
+# Production Environment
+# =============================================================================
+
+[env.production]
+name = "myelektra-production"
+routes = [
+  { pattern = "myelektra.com", zone_name = "myelektra.com" },
+  { pattern = "www.myelektra.com", zone_name = "myelektra.com" }
+]
+
+[env.production.vars]
+TINA_CLIENT_ID = "<TINA_CLIENT_ID_PRODUCTION>"
+TINA_TOKEN = "<TINA_TOKEN_PRODUCTION>"
+PUBLIC_GA_ID = "G-XXXXXXXXXX"
+
+# =============================================================================
+# Staging Environment
+# =============================================================================
+
+[env.staging]
+name = "myelektra-staging"
+routes = [
+  { pattern = "staging.myelektra.com", zone_name = "myelektra.com" }
+]
+
+[env.staging.vars]
+TINA_CLIENT_ID = "<TINA_CLIENT_ID_STAGING>"
+TINA_TOKEN = "<TINA_TOKEN_STAGING>"
+PUBLIC_GA_ID = "G-XXXXXXXXXX"
+
+# =============================================================================
+# Development Environment
+# =============================================================================
+
+[env.development]
+name = "myelektra-development"
+
+[env.development.vars]
+TINA_CLIENT_ID = "<TINA_CLIENT_ID_DEV>"
+TINA_TOKEN = "<TINA_TOKEN_DEV>"
+PUBLIC_GA_ID = ""
+
+# =============================================================================
+# Build Configuration
+# =============================================================================
+
+[build]
+command = "npm run build"
+watch_dir = "src"
+
+# =============================================================================
+# Limits (Optional)
+# =============================================================================
+
+# [limits]
+# cpu_ms = 50
+# free_zone_prepaid = 50

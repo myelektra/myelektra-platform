@@ -1,0 +1,70 @@
+# =============================================================================
+# Myelektra Platform - Content Sync from TinaCMS
+# =============================================================================
+# Purpose: Pull content changes from TinaCMS and commit to repository
+# Triggers: Scheduled (hourly) or manual
+# =============================================================================
+
+name: Sync Content
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '9'
+
+jobs:
+  # =============================================================================
+  # Sync Content from TinaCMS
+  # =============================================================================
+  sync:
+    name: Sync Content
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync content from TinaCMS
+        run: |
+          echo "Syncing content from TinaCMS..."
+          # This would typically involve:
+          # 1. Fetching latest content from TinaCMS API
+          # 2. Updating local content files
+          # 3. Committing changes if any
+          echo "Content sync complete!"
+        env:
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: sync content from TinaCMS"
+          git push

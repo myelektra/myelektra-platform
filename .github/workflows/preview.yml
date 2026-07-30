@@ -1,0 +1,97 @@
+# =============================================================================
+# Myelektra Platform - Preview Deployment
+# =============================================================================
+# Purpose: Deploy preview environment for pull requests
+# Triggers: Pull requests to main
+# =============================================================================
+
+name: Preview
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '9'
+
+jobs:
+  # =============================================================================
+  # Build and Deploy Preview
+  # =============================================================================
+  preview:
+    name: Deploy Preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build website
+        run: pnpm --filter @myelektra/website build
+        env:
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+
+      - name: Deploy preview
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/website
+          command: pages deploy dist/ --project-name=myelektra-preview --branch=pr-${{ github.event.pull_request.number }}
+
+      - name: Comment PR with preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 **Preview Deployment Ready!**
+            
+            **URL:** https://pr-${{ github.event.pull_request.number }}.myelektra-preview.pages.dev
+            
+            **What's included:**
+            - All website pages
+            - TinaCMS admin panel (at /admin)
+            
+            **Note:** This is a preview environment. Content changes made here will not affect production.`
+            })
+
+  # =============================================================================
+  # Lighthouse Check
+  # =============================================================================
+  lighthouse:
+    name: Lighthouse Check
+    runs-on: ubuntu-latest
+    needs: [preview]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            https://pr-${{ github.event.pull_request.number }}.myelektra-preview.pages.dev/
+          budgetPath: ./lighthouse-budget.json
+          uploadArtifacts: true

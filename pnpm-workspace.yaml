@@ -1,0 +1,13 @@
+# =============================================================================
+# Myelektra Platform - pnpm Workspace Configuration
+# =============================================================================
+
+packages:
+  # Applications
+  - 'apps/*'
+
+  # Shared packages
+  - 'packages/*'
+
+  # Scripts (optional - for migration scripts)
+  # - 'scripts/*'

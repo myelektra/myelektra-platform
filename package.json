@@ -1,0 +1,29 @@
+{
+  "name": "myelektra-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Myelektra Platform - Revenue Intelligence Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,astro,md,mdx,json,yaml,yml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,astro,md,mdx,json,yaml,yml}\""
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "prettier": "^3.3.0",
+    "eslint": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}
