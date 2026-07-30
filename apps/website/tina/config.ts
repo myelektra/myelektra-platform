@@ -13,8 +13,11 @@ import { defineConfig } from 'tinacms';
 import { config } from 'dotenv';
 import { resolve } from 'path';
 
-// Load .env.local from project root (two levels up from apps/website/tina/)
-config({ path: resolve(__dirname, '../../.env.local') });
+// Load .env.local for local development
+// TinaCloud injects TINA_CLIENT_ID and TINA_TOKEN automatically
+if (process.env.NODE_ENV !== 'production') {
+  config({ path: resolve(process.cwd(), '.env.local') });
+}
 
 // =============================================================================
 // Branch Configuration
