@@ -1,0 +1,52 @@
+{
+  "columns": [
+    {
+      "title": "",
+      "type": "brand",
+      "links": []
+    },
+    {
+      "title": "Solutions",
+      "type": "solutions",
+      "links": []
+    },
+    {
+      "title": "Company",
+      "type": "company",
+      "links": [
+        {
+          "label": "About",
+          "path": "/about"
+        },
+        {
+          "label": "Industries",
+          "path": "/industries"
+        },
+        {
+          "label": "Academy",
+          "path": "/academy"
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "type": "contact",
+      "links": [
+        {
+          "label": "Get Quote Here",
+          "path": "/get-quote-here-new"
+        },
+        {
+          "label": "Book Online Meeting",
+          "path": "/consultation"
+        },
+        {
+          "label": "Book a Revenue Consultation →",
+          "path": "/consultation",
+          "highlight": true
+        }
+      ]
+    }
+  ],
+  "copyright": "© {year} Myelektra.com. All rights reserved."
+}

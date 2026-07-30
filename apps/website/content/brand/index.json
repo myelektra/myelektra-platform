@@ -1,0 +1,29 @@
+{
+  "company": "PT. Myelektra Solusi Indonesia",
+  "domain": "myelektra.com",
+  "tagline": "We Build Revenue Systems, Not Just Lead Lists.",
+  "subTagline": "From Buyer Persona to Revenue Pipeline.",
+  "positioning": "Your Revenue Growth Partner",
+  "phone": "+62 21 29636761",
+  "email": "",
+  "address": {
+    "line1": "38th Floor, 88 Office",
+    "line2": "Kota Kasablanka, South Jakarta",
+    "country": "Indonesia"
+  },
+  "hours": "Weekdays / 9:00 – 18:00",
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/3560717",
+    "instagram": "https://www.instagram.com/myelektra/"
+  },
+  "founder": {
+    "name": "Dian Satya, S.E.",
+    "title": "Founder & CEO Myelektra.com",
+    "photo": "https://media.licdn.com/dms/image/v2/D5603AQHa2ssFNQpegA/profile-displayphoto-crop_800_800/B56Z2VjB12GgAM-/0/1776330483600?e=1785974400&v=beta&t=04iVjvHs__Mv4z_LEQnglqcLGaItfyvJsZ0n7uBAAB4",
+    "linkedin": "https://www.linkedin.com/in/diansatya/",
+    "instagram": "https://www.instagram.com/dian_satyaa/"
+  },
+  "logo": {
+    "file": "https://files.catbox.moe/ih1ryw.png"
+  }
+}

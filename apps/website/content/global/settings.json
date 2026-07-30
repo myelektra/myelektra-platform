@@ -1,0 +1,20 @@
+{
+  "floatingCta": {
+    "text": "Ready to Build Your Revenue System?",
+    "buttonLabel": "Get Started",
+    "buttonPath": "/get-quote-here-new",
+    "showAfterScrollPx": 500
+  },
+  "backToTop": {
+    "showAfterScrollPx": 300
+  },
+  "cookieBanner": {
+    "text": "We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.",
+    "acceptLabel": "Accept All",
+    "learnMoreLabel": "Learn More"
+  },
+  "scrollAnimation": {
+    "enabled": true
+  },
+  "disclaimer": "Myelektra.com is a trading name of PT. Myelektra Solusi Indonesia."
+}

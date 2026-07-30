@@ -1,0 +1,67 @@
+{
+  "desktop": [
+    {
+      "label": "Home",
+      "path": "/"
+    },
+    {
+      "label": "Solutions",
+      "path": "/solutions",
+      "submenu": [
+        {
+          "label": "Revenue Intelligence",
+          "path": "/solutions/revenue-intelligence"
+        },
+        {
+          "label": "Pipeline Builder",
+          "path": "/solutions/pipeline-builder"
+        },
+        {
+          "label": "Revenue Engine",
+          "path": "/solutions/revenue-engine"
+        },
+        {
+          "label": "AI Sales Transformation",
+          "path": "/solutions/ai-sales-transformation"
+        },
+        {
+          "label": "Fractional Revenue Office",
+          "path": "/solutions/fractional-revenue-office"
+        }
+      ]
+    },
+    {
+      "label": "Industries",
+      "path": "/industries"
+    },
+    {
+      "label": "Pricing",
+      "path": "/pricing"
+    },
+    {
+      "label": "Academy",
+      "path": "/academy"
+    },
+    {
+      "label": "About",
+      "path": "/about"
+    },
+    {
+      "label": "Contact Us",
+      "path": "/contact",
+      "submenu": [
+        {
+          "label": "Get Quote Here",
+          "path": "/get-quote-here-new"
+        },
+        {
+          "label": "Book Online Meeting",
+          "path": "/consultation"
+        }
+      ]
+    }
+  ],
+  "headerCta": "Book an Online Meeting",
+  "headerCtaPath": "/consultation",
+  "hideFromNav": ["How It Works"]
+}
