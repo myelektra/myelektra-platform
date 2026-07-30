@@ -8,7 +8,6 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
-import { tinaIntegration } from 'tinacms/dist/vite';
 
 // =============================================================================
 // Astro Configuration
@@ -18,7 +17,7 @@ export default defineConfig({
   // Output: Server-side rendering for TinaCMS visual editing
   output: 'server',
 
-  // Adapter: Cloudflare Workers (required for TinaCMS)
+  // Adapter: Cloudflare Workers
   adapter: cloudflare(),
 
   // Vite plugins
@@ -26,34 +25,11 @@ export default defineConfig({
     plugins: [
       // Tailwind CSS
       tailwindcss(),
-
-      // TinaCMS integration
-      tinaIntegration({
-        // Path to TinaCMS config
-        configPath: './tina/config.ts',
-
-        // Media directory
-        publicMediaDir: './public/uploads',
-
-        // Content directory
-        contentDir: './content',
-
-        // Generate types
-        generateCodegen: true,
-      }),
     ],
 
     // Optimize for production
     build: {
       cssCodeSplit: true,
-      minify: 'terser',
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            'react': ['react', 'react-dom'],
-          },
-        },
-      },
     },
   },
 
@@ -91,10 +67,6 @@ export default defineConfig({
     host: true,
   },
 
-  // Environment variables
-  env: {
-    // TinaCMS
-    TINA_CLIENT_ID: process.env.TINA_CLIENT_ID,
-    TINA_TOKEN: process.env.TINA_TOKEN,
-  },
+  // Note: TINA_CLIENT_ID and TINA_TOKEN are read by TinaCMS directly from process.env
+  // Do NOT add them to env block — Astro strict mode will reject unrecognized keys
 });

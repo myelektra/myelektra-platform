@@ -18,29 +18,26 @@ main = "dist/_worker.js"
 bucket = "./dist"
 
 # =============================================================================
-# D1 Database (Business Data Only)
+# D1 Database (Uncomment when ready)
 # =============================================================================
-
-[[d1_databases]]
-binding = "DB"
-database_name = "myelektra-business"
-database_id = "<D1_DATABASE_ID>"
-
-# =============================================================================
-# R2 Storage (Media Assets)
-# =============================================================================
-
-[[r2_buckets]]
-binding = "MEDIA"
-bucket_name = "myelektra-media"
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "myelektra-business"
+# database_id = "<D1_DATABASE_ID>"
 
 # =============================================================================
-# KV Namespaces (Caching)
+# R2 Storage (Uncomment when ready)
 # =============================================================================
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "myelektra-media"
 
-[[kv_namespaces]]
-binding = "CACHE"
-id = "<KV_NAMESPACE_ID>"
+# =============================================================================
+# KV Namespaces (Uncomment when ready)
+# =============================================================================
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "<KV_NAMESPACE_ID>"
 
 # =============================================================================
 # Environment Variables
@@ -48,8 +45,15 @@ id = "<KV_NAMESPACE_ID>"
 
 [vars]
 # TinaCMS Configuration
-TINA_CLIENT_ID = "<TINA_CLIENT_ID>"
-TINA_TOKEN = "<TINA_TOKEN>"
+# TINA_CLIENT_ID is safe to expose (read-only identifier)
+TINA_CLIENT_ID = "e6b15b5f-efe0-4db0-8ec6-531859025cc0"
+# TINA_TOKEN must be set as a Cloudflare secret:
+#   wrangler secret put TINA_TOKEN
+#   wrangler secret put TINA_TOKEN --env production
+# Do NOT store the token in plain text here!
+
+# Site URL
+PUBLIC_SITE_URL = "https://myelektra.com"
 
 # Analytics
 PUBLIC_GA_ID = "G-XXXXXXXXXX"
@@ -69,8 +73,10 @@ routes = [
 ]
 
 [env.production.vars]
-TINA_CLIENT_ID = "<TINA_CLIENT_ID_PRODUCTION>"
-TINA_TOKEN = "<TINA_TOKEN_PRODUCTION>"
+TINA_CLIENT_ID = "e6b15b5f-efe0-4db0-8ec6-531859025cc0"
+# TINA_TOKEN must be set as a secret:
+#   wrangler secret put TINA_TOKEN --env production
+PUBLIC_SITE_URL = "https://myelektra.com"
 PUBLIC_GA_ID = "G-XXXXXXXXXX"
 
 # =============================================================================

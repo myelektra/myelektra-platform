@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { client } from '../../tina/__generated__/client';
+
+let industries = [
+  { title: 'Manufacturing', description: 'Connect with plant leadership, operations, procurement, supply-chain, and general management.', icon: 'manufacturing', personas: [{ name: 'Plant Director', description: 'Plant operations and efficiency' }, { name: 'Operations Manager', description: 'Daily operations and process optimization' }, { name: 'Procurement Head', description: 'Strategic sourcing and vendor management' }, { name: 'Supply Chain Manager', description: 'Logistics and supply chain optimization' }, { name: 'General Manager', description: 'Overall business performance' }] },
+  { title: 'SaaS and Technology', description: 'Reach founders and leaders responsible for growth, sales, operations, technology, and revenue.', icon: 'saas', personas: [{ name: 'CEO/Founder', description: 'Company vision and growth strategy' }, { name: 'COO/CTO', description: 'Operations and technology leadership' }, { name: 'Head of Sales', description: 'Revenue growth and sales performance' }, { name: 'Head of Marketing', description: 'Demand generation and brand' }, { name: 'RevOps/Head of Growth', description: 'Revenue operations and growth' }] },
+  { title: 'Banking and Financial Services', description: 'Identify senior stakeholders in digital transformation, technology, risk, procurement, and partnerships.', icon: 'banking', personas: [{ name: 'IT Director', description: 'Technology infrastructure and strategy' }, { name: 'Digital Banking Head', description: 'Digital transformation initiatives' }, { name: 'Risk Director', description: 'Risk management and compliance' }, { name: 'Procurement Head', description: 'Vendor relationships and purchasing' }, { name: 'Partnership Director', description: 'Strategic partnerships' }] },
+  { title: 'BPO and Business Services', description: 'Reach leadership in operations, HR, shared services, customer experience, and client delivery.', icon: 'bpo', personas: [{ name: 'COO', description: 'Service delivery and operations' }, { name: 'HR Director', description: 'Talent acquisition and workforce' }, { name: 'Shared Services Head', description: 'Shared service optimization' }, { name: 'Customer Experience Head', description: 'Customer satisfaction and retention' }, { name: 'Client Delivery Head', description: 'Client relationship management' }] },
+  { title: 'Professional Services and Consulting', description: 'Connect with partners and commercial leaders in business development, client acquisition, and strategic growth.', icon: 'consulting', personas: [{ name: 'Managing Partner', description: 'Firm strategy and client relationships' }, { name: 'Director', description: 'Practice area leadership' }, { name: 'Business Development Head', description: 'New business acquisition' }, { name: 'Engagement Manager', description: 'Client engagement delivery' }, { name: 'Client Partner', description: 'Strategic client relationships' }] },
+];
+
+let pageData = {
+  title: 'Industries', description: 'Industries we serve.',
+  heroHeadline: 'Industries We Serve',
+  heroSubtitle: 'Myelektra provides targeted revenue growth solutions across key B2B industries, connecting you with the decision-makers who drive purchasing decisions.',
+  personasHeadline: 'Buyer Personas',
+  ctaHeadline: 'Targeting a Specific Industry?',
+  ctaBody: 'Book a meeting to discuss your industry, target market, and how Myelektra can help you reach the right decision-makers.',
+  ctaButtonLabel: 'Book an Online Meeting', ctaButtonPath: '/consultation'
+};
+
+try { const r = await client.request({ query: `query { page(relativePath: "industries.mdx") { heroHeadline heroSubtitle personasHeadline ctaHeadline ctaBody ctaButtonLabel ctaButtonPath } }` }); if (r.data?.page) { const d = r.data.page; if (d.heroHeadline) pageData.heroHeadline = d.heroHeadline; if (d.heroSubtitle) pageData.heroSubtitle = d.heroSubtitle; } } catch {}
+try { const r = await client.request({ query: `query { industryConnection { edges { node { title description icon personas { name description } } } } }` }); if (r.data?.industryConnection?.edges?.length) industries = r.data.industryConnection.edges.map((e: any) => e.node); } catch {}
+
+const iconMap: Record<string, string> = { manufacturing: '🏭', saas: '💻', banking: '🏦', bpo: '📞', consulting: '💼' };
+---
+
+<BaseLayout title={pageData.title} description={pageData.description}>
+  <section class="section-light section-padding" style="background:linear-gradient(135deg, rgba(11,17,32,0.92), rgba(0,82,204,0.85));min-height:40vh;display:flex;align-items:center">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">{pageData.heroHeadline}</h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">{pageData.heroSubtitle}</p>
+    </div>
+  </section>
+
+  <section class="section-gray section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {industries.map((ind) => (
+          <div class="card">
+            <div style="font-size:36px;margin-bottom:12px">{iconMap[ind.icon] || '🏢'}</div>
+            <h3 class="card-title">{ind.title}</h3>
+            <p class="card-desc mb-4">{ind.description}</p>
+            <div class="mb-3">
+              <h4 class="text-xs font-semibold text-teal uppercase tracking-wider mb-2">{pageData.personasHeadline}</h4>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px">
+              {ind.personas?.map((p: any) => (
+                <span class="persona-tag">{p.name}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark section-padding">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title-white">{pageData.ctaHeadline}</h2>
+      <p class="text-white/70 mb-8 max-w-2xl mx-auto">{pageData.ctaBody}</p>
+      <a href={pageData.ctaButtonPath} class="btn btn-large">{pageData.ctaButtonLabel}</a>
+    </div>
+  </section>
+</BaseLayout>

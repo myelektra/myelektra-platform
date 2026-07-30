@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { client } from '../../tina/__generated__/client';
+
+let heroData = { headline: 'We Build Revenue Systems, Not Just Lead Lists.', subtitle: 'From Buyer Persona to Revenue Pipeline.', ctaLabel: 'Book an Online Meeting', ctaPath: '/consultation' };
+let solutions = [
+  { title: 'Revenue Intelligence', price: '[Book Meeting for Pricing] per project', description: 'Build a focused market-entry and prospecting foundation before launching outreach.', icon: 'bronze', isPopular: false, bestFor: 'Companies that need to define their target market, buyer personas, and prospecting strategy.', cta: 'Start Revenue Intelligence', features: ['ICP development', 'Buyer persona mapping', 'Up to 300 verified contacts', 'Revenue opportunity report'] },
+  { title: 'Pipeline Builder', price: 'USD x,xxx per month', description: 'Turn approved buyer personas and target accounts into qualified sales conversations.', icon: 'silver', isPopular: false, bestFor: 'Companies with defined target markets that need consistent, professional outreach.', cta: 'Build My Pipeline', features: ['HubSpot CRM setup', 'AI-assisted prospecting', 'Human SDR follow-up', 'Weekly reporting dashboard'] },
+  { title: 'Revenue Engine', price: 'USD x,xxx per month', description: 'Build and manage an integrated system connecting prospecting, HubSpot, SDR activity, and pipeline management.', icon: 'gold', isPopular: true, bestFor: 'Companies ready to build a complete, measurable revenue system.', cta: 'Build My Revenue Engine', features: ['Everything in Pipeline Builder', 'Workflow automation', 'Pipeline design & management', 'Revenue forecasting'] },
+  { title: 'AI Sales Transformation', price: '[Book Meeting for Pricing] per project', description: 'Transform manual sales activities into AI-assisted, measurable, and scalable workflows.', icon: 'platinum', isPopular: false, bestFor: 'Companies wanting to modernize their sales process with AI tools.', cta: 'Transform My Sales Team', features: ['AI readiness assessment', 'HubSpot AI setup', 'AI sales playbook', 'Sales team training'] },
+  { title: 'Fractional Revenue Office', price: 'USD x,xxx–xx,xxx per month', description: 'Add experienced revenue leadership, RevOps support, SDR management, and executive reporting.', icon: 'diamond', isPopular: false, bestFor: 'Companies that need senior revenue leadership without a full-time executive hire.', cta: 'Talk to a Revenue Advisor', features: ['Revenue strategy & planning', 'SDR team management', 'Quarterly growth planning', 'Executive reporting'] },
+];
+let whyMyelektra = [
+  { title: 'AI and Human Expertise', description: 'Technology improves speed and insight. Human judgment protects relevance, communication quality, and professional relationships.', icon: 'brain' },
+  { title: 'HubSpot-Centered Execution', description: 'Prospecting, qualification, follow-up, lead status, pipeline activities, and reporting are organized around a structured CRM system.', icon: 'hubspot' },
+  { title: 'Quality Before Quantity', description: 'We focus on buyer-persona fit and useful business conversations—not mass contact collection.', icon: 'quality' },
+  { title: 'Transparent Reporting', description: 'Clients receive clear visibility into campaign activity, lead categories, engagement, meetings, and next actions.', icon: 'report' },
+  { title: 'Regional Market Understanding', description: 'Based in Jakarta, Myelektra supports B2B growth across Indonesia, Southeast Asia, Australia, and selected global markets.', icon: 'globe' },
+  { title: 'Revenue-Focused Strategy', description: 'Every service is designed to improve the path from target account to conversation, meeting, opportunity, and revenue.', icon: 'revenue' },
+];
+let industries = [
+  { title: 'Manufacturing', description: 'Connect with plant leadership, operations, procurement, and supply-chain management.', personas: ['Plant Director', 'Operations Manager', 'Procurement Head', 'Supply Chain Manager', 'General Manager'], icon: 'manufacturing' },
+  { title: 'SaaS and Technology', description: 'Reach founders and leaders responsible for growth, sales, operations, and revenue.', personas: ['CEO/Founder', 'COO/CTO', 'Head of Sales', 'Head of Marketing', 'RevOps/Head of Growth'], icon: 'saas' },
+  { title: 'Banking and Financial Services', description: 'Identify senior stakeholders in digital transformation, technology, risk, and partnerships.', personas: ['IT Director', 'Digital Banking Head', 'Risk Director', 'Procurement Head', 'Partnership Director'], icon: 'banking' },
+  { title: 'BPO and Business Services', description: 'Reach leadership in operations, HR, shared services, customer experience, and client delivery.', personas: ['COO', 'HR Director', 'Shared Services Head', 'Customer Experience Head', 'Client Delivery Head'], icon: 'bpo' },
+  { title: 'Professional Services and Consulting', description: 'Connect with partners and commercial leaders in business development and client acquisition.', personas: ['Managing Partner', 'Director', 'Business Development Head', 'Engagement Manager', 'Client Partner'], icon: 'consulting' },
+];
+let countries = [
+  { name: 'Indonesia', flagAccent: 'flag-accent-indonesia', personas: ['President Director', 'Operations Director', 'IT Director', 'Procurement Head', 'Business Development Manager'] },
+  { name: 'Malaysia', flagAccent: 'flag-accent-malaysia', personas: ['Managing Director', 'Head of Operations', 'CTO', 'Supply Chain Director', 'Sales Director'] },
+  { name: 'Singapore', flagAccent: 'flag-accent-singapore', personas: ['CEO', 'VP of Sales', 'Head of Digital', 'Procurement Director', 'Partnership Lead'] },
+  { name: 'Australia', flagAccent: 'flag-accent-australia', personas: ['General Manager', 'Head of Growth', 'COO', 'IT Manager', 'Commercial Director'] },
+  { name: 'Europe', flagAccent: 'flag-accent-europe', personas: ['Country Manager', 'Head of Sales', 'Procurement Lead', 'Operations Head', 'Digital Transformation Lead'] },
+  { name: 'United States', flagAccent: 'flag-accent-usa', personas: ['VP of Sales', 'Director of Operations', 'Head of Revenue', 'CIO', 'Business Development VP'] },
+  { name: 'Middle East', flagAccent: 'flag-accent-middle-east', personas: ['Country Director', 'Operations Head', 'IT Director', 'Procurement Manager', 'Partnership Director'] },
+];
+const journey = [
+  { title: 'Revenue Intelligence', desc: 'Define your ideal customer profile and target market', icon: '🎯' },
+  { title: 'AI Agent Prospecting', desc: 'Use AI to identify and research target accounts', icon: '🤖' },
+  { title: 'Human SDR Engagement', desc: 'Professional outreach via email and phone', icon: '📞' },
+  { title: 'HubSpot CRM', desc: 'Structured pipeline and activity management', icon: '📊' },
+  { title: 'Revenue Operations', desc: 'Measurable results and continuous improvement', icon: '📈' },
+];
+const achievements = [
+  { title: 'Better-Fit Prospects', desc: 'Target accounts that match your ICP', icon: '🎯' },
+  { title: 'More Sales Conversations', desc: 'Consistent outreach that starts discussions', icon: '💬' },
+  { title: 'A Stronger Pipeline', desc: 'Clear visibility into every opportunity', icon: '📊' },
+  { title: 'Clearer Revenue Visibility', desc: 'Know where your revenue comes from', icon: '👁️' },
+  { title: 'Scalable Sales Operations', desc: 'Processes that grow with your business', icon: '🚀' },
+];
+
+try {
+  const r = await client.request({ query: `query { page(relativePath: "home.mdx") { heroHeadline heroSubtitle heroCtaLabel heroCtaPath } }` });
+  if (r.data?.page) { const d = r.data.page; if (d.heroHeadline) heroData.headline = d.heroHeadline; if (d.heroSubtitle) heroData.subtitle = d.heroSubtitle; if (d.heroCtaLabel) heroData.ctaLabel = d.heroCtaLabel; if (d.heroCtaPath) heroData.ctaPath = d.heroCtaPath; }
+} catch {}
+try {
+  const r = await client.request({ query: `query { solutionConnection { edges { node { title price description icon isPopular bestFor cta } } } }` });
+  if (r.data?.solutionConnection?.edges?.length) solutions = r.data.solutionConnection.edges.map((e: any) => ({ ...solutions.find(s => s.title === e.node.title) || {}, ...e.node, features: [] }));
+} catch {}
+
+const logoHashes = ['t5y3dl','4a7p1v','3a5cc8','o9aqso','hl3ou5','r2vdt4','pmthp8','gfp8is','ovg7oa','omzx89','iit9rv','akbnd5','hfiaab'];
+---
+
+<BaseLayout title="Home">
+  <!-- HERO -->
+  <section class="hero has-video section-padding" style="background:linear-gradient(135deg, rgba(11,17,32,0.92), rgba(0,82,204,0.85)), url('data:image/svg+xml,...');min-height:85vh;display:flex;align-items:center">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="hero-badge">AI-Powered Revenue Growth Partner</div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
+        We Build Revenue Systems, <span class="gradient-text">Not Just Lead Lists.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto">{heroData.subtitle}</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={heroData.ctaPath} class="btn btn-large">{heroData.ctaLabel}</a>
+        <a href="/solutions" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:white">Explore Our Solutions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGOS MARQUEE -->
+  <section class="section-light section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+      <h2 class="text-2xl font-bold text-navy">Our Experience</h2>
+    </div>
+    <div style="overflow:hidden;position:relative">
+      <div id="marquee-track" class="marquee-track" style="padding:0 24px">
+        {logoHashes.map((hash) => (
+          <img src={`https://files.catbox.moe/${hash}.png`} alt="" class="marquee-logo" loading="lazy" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- THE JOURNEY -->
+  <section class="section-gray section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <p class="section-label">From Buyer Persona to Revenue Pipeline</p>
+      <h2 class="section-title">The Revenue Growth Journey</h2>
+      <p class="section-subtitle">Sustainable B2B growth requires the right market, the right decision-makers, consistent engagement, disciplined follow-up, accurate CRM data, and a measurable sales process.</p>
+      <div class="divider-line mt-8"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        {journey.map((item, i) => (
+          <div class={`card text-center stagger-${i + 1}`}>
+            <div class="card-icon card-icon-gradient">{item.icon}</div>
+            <h3 class="card-title">{item.title}</h3>
+            <p class="card-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section-light section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <h2 class="section-title">What We Help You Achieve</h2>
+      <div class="divider-line mt-4"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {achievements.map((item, i) => (
+          <div class={`card text-center stagger-${i + 1}`} style="padding:24px">
+            <div class="card-icon card-icon-teal">{item.icon}</div>
+            <h3 class="text-base font-semibold mb-2">{item.title}</h3>
+            <p class="card-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS OVERVIEW -->
+  <section class="section-dark section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <p class="section-label" style="color:rgba(255,255,255,0.6)">Our Services</p>
+      <h2 class="section-title-white">Our Revenue Growth Solutions</h2>
+      <div class="divider-line mt-4"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {solutions.map((sol, i) => (
+          <div class={`solution-card ${sol.isPopular ? 'featured' : ''} stagger-${i+1}`}>
+            {sol.isPopular && <div class="badge-popular">Most Popular</div>}
+            <div class="card-icon card-icon-blue">
+              {['🥉','🥈','🥇','💎','💠'][i] || '📦'}
+            </div>
+            <h3 class="card-title">{sol.title}</h3>
+            <p class="solution-price">{sol.price}</p>
+            <p class="card-desc mb-4">{sol.description}</p>
+            <ul class="feature-list">
+              {sol.features.map((f) => (
+                <li class="feature-item">
+                  <span class="feature-check">✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a href="/consultation" class="learn-more">
+              {sol.cta}
+              <span class="learn-more-arrow">→</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTRY TARGETING -->
+  <section class="section-gray section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <h2 class="section-title">One Country. One Focused Campaign.</h2>
+      <p class="section-subtitle">Every campaign targets one selected country to maintain relevance, personalization, and research quality. Maximum 300 verified contacts per country.</p>
+      <div class="divider-line mt-4"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {countries.map((c) => (
+          <div class={`country-card ${c.flagAccent}`}>
+            <h3 class="text-lg font-bold mb-3">{c.name}</h3>
+            <div>
+              {c.personas.map((p) => (
+                <span class="persona-tag">{p}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="section-light section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <h2 class="section-title">Industries We Serve</h2>
+      <div class="divider-line mt-4"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {industries.map((ind) => (
+          <div class="card">
+            <h3 class="card-title">{ind.title}</h3>
+            <p class="card-desc mb-4">{ind.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {ind.personas.map((p) => (
+                <span class="persona-tag">{p}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY MYELEKTRA -->
+  <section class="section-dark section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <h2 class="section-title-white">Why Myelektra</h2>
+      <div class="divider-line mt-4"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {whyMyelektra.map((item) => (
+          <div class="card-dark">
+            <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+            <p class="card-desc-dark">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMY TEASER -->
+  <section class="section-gradient section-padding" style="background:linear-gradient(135deg, #1A73E8, #1877F2)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Myelektra Academy</h2>
+      <p class="text-lg text-white/80 mb-4 max-w-2xl mx-auto">Build an AI-Enabled B2B Sales Team</p>
+      <p class="text-white/70 mb-8 max-w-3xl mx-auto">Myelektra Academy helps founders, sales leaders, business development teams, and corporate sales professionals adopt modern B2B selling practices through structured training programs.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
+        <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-white">
+          <p class="text-sm text-white/70 uppercase tracking-wider mb-1">Public Classes</p>
+          <p class="text-2xl font-bold">From USD xx</p>
+          <p class="text-sm text-white/70">per participant</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-white">
+          <p class="text-sm text-white/70 uppercase tracking-wider mb-1">Corporate Training</p>
+          <p class="text-2xl font-bold">From USD x,xxx</p>
+          <p class="text-sm text-white/70">per batch</p>
+        </div>
+      </div>
+      <a href="/academy" class="btn" style="background:white;color:#1A73E8">Explore Myelektra Academy</a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section-dark section-padding" style="background:linear-gradient(135deg, #0B1120, #0052CC)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Built for Companies That Want More Than Contact Data</h2>
+      <p class="text-white/70 mb-8 max-w-3xl mx-auto">You need a clear target market, relevant decision-makers, professional engagement, disciplined follow-up, reliable CRM data, and visibility into your revenue pipeline. That is the system Myelektra builds.</p>
+      <p class="text-xl text-white font-semibold mb-4">Ready to Build Your Revenue System?</p>
+      <p class="text-white/60 mb-8">Start with a discovery session to review your target market, current sales process, and growth priorities.</p>
+      <a href="/consultation" class="btn btn-large">Book an Online Meeting</a>
+    </div>
+  </section>
+
+  <script>
+    const track = document.getElementById('marquee-track');
+    if (track) {
+      let offset = 0;
+      let paused = false;
+      const speed = 0.5;
+      const clone = track.cloneNode(true);
+      track.parentElement.appendChild(clone);
+      track.parentElement.addEventListener('mouseenter', () => paused = true);
+      track.parentElement.addEventListener('mouseleave', () => paused = false);
+      function animate() {
+        if (!paused) offset -= speed;
+        const items = track.parentElement.querySelectorAll('.marquee-track');
+        const w = items[0].offsetWidth;
+        if (Math.abs(offset) >= w) offset += w;
+        items.forEach(el => el.style.transform = `translateX(${offset}px)`);
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { client } from '../../tina/__generated__/client';
+
+let solutions = [
+  { title: 'Revenue Intelligence', price: '[Book Meeting for Pricing] per project', description: 'Build a focused market-entry and prospecting foundation before launching outreach.', icon: 'bronze', isPopular: false, bestFor: 'Companies that need to define their target market, buyer personas, and prospecting strategy.', cta: 'Start Revenue Intelligence', features: ['ICP development and market-entry analysis', 'Buyer persona mapping with decision-making roles', 'Up to 300 verified contacts per target country', 'Revenue opportunity report with priority recommendations'] },
+  { title: 'Pipeline Builder', price: 'USD x,xxx per month', description: 'Turn approved buyer personas and target accounts into qualified sales conversations.', icon: 'silver', isPopular: false, bestFor: 'Companies with defined target markets that need consistent, professional outreach.', cta: 'Build My Pipeline', features: ['HubSpot CRM setup and configuration', 'AI-assisted prospecting and personalization', 'Human SDR follow-up via email and phone', 'Weekly reporting and activity dashboard'] },
+  { title: 'Revenue Engine', price: 'USD x,xxx per month', description: 'Build and manage an integrated system connecting prospecting, HubSpot, SDR activity, and pipeline management.', icon: 'gold', isPopular: true, bestFor: 'Companies ready to build a complete, measurable revenue system with pipeline visibility.', cta: 'Build My Revenue Engine', features: ['Everything in Pipeline Builder', 'Workflow automation and process design', 'Pipeline design and management', 'Revenue forecasting and performance insights'] },
+  { title: 'AI Sales Transformation', price: '[Book Meeting for Pricing] per project', description: 'Transform manual sales activities into AI-assisted, measurable, and scalable workflows.', icon: 'platinum', isPopular: false, bestFor: 'Companies wanting to modernize their sales process with AI tools and automation.', cta: 'Transform My Sales Team', features: ['AI readiness assessment and roadmap', 'HubSpot AI setup and configuration', 'AI sales playbook development', 'Sales team training and onboarding'] },
+  { title: 'Fractional Revenue Office', price: 'USD x,xxx–xx,xxx per month', description: 'Add experienced revenue leadership, RevOps support, SDR management, and executive reporting.', icon: 'diamond', isPopular: false, bestFor: 'Companies that need senior revenue leadership without a full-time executive hire.', cta: 'Talk to a Revenue Advisor', features: ['Revenue strategy and planning', 'SDR team management and coaching', 'Quarterly growth planning and review', 'Executive reporting and board-ready insights'] },
+];
+
+let pageData = {
+  title: 'Solutions', description: 'From market intelligence to pipeline management.',
+  heroHeadline: 'Our Revenue Growth Solutions',
+  heroSubtitle: 'From market intelligence to pipeline management — choose the solution that matches your growth stage.',
+  includedLabel: 'What\'s Included:', popularBadge: 'Most Popular',
+  ctaHeadline: 'Not sure which solution fits?', ctaBody: 'Book a meeting and we will help you find the right starting point.',
+  ctaButtonLabel: 'Book an Online Meeting', ctaButtonPath: '/consultation'
+};
+
+try { const r = await client.request({ query: `query { page(relativePath: "solutions.mdx") { heroHeadline heroSubtitle includedLabel popularBadge ctaHeadline ctaBody ctaButtonLabel ctaButtonPath } }` }); if (r.data?.page) { const d = r.data.page; if (d.heroHeadline) pageData.heroHeadline = d.heroHeadline; if (d.heroSubtitle) pageData.heroSubtitle = d.heroSubtitle; if (d.includedLabel) pageData.includedLabel = d.includedLabel; if (d.popularBadge) pageData.popularBadge = d.popularBadge; if (d.ctaHeadline) pageData.ctaHeadline = d.ctaHeadline; if (d.ctaBody) pageData.ctaBody = d.ctaBody; } } catch {}
+try { const r = await client.request({ query: `query { solutionConnection { edges { node { title price description icon isPopular bestFor cta } } } }` }); if (r.data?.solutionConnection?.edges?.length) solutions = r.data.solutionConnection.edges.map((e: any) => ({ ...solutions.find(s => s.title === e.node.title) || {}, ...e.node, features: solutions.find(s => s.title === e.node.title)?.features || [] })); } catch {}
+
+const iconEmoji: Record<string, string> = { bronze: '🥉', silver: '🥈', gold: '🥇', platinum: '💎', diamond: '💠' };
+const iconColor: Record<string, string> = { bronze: '#CD7F32', silver: '#A0A0A0', gold: '#FFB800', platinum: '#00C896', diamond: '#1A73E8' };
+---
+
+<BaseLayout title={pageData.title} description={pageData.description}>
+  <section class="section-light section-padding" style="background:linear-gradient(135deg, rgba(11,17,32,0.92), rgba(0,82,204,0.85));min-height:50vh;display:flex;align-items:center">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">{pageData.heroHeadline}</h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">{pageData.heroSubtitle}</p>
+    </div>
+  </section>
+
+  <section class="section-gray section-padding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {solutions.map((sol, i) => (
+          <div class={`solution-card ${sol.isPopular ? 'featured' : ''}`} style={sol.isPopular ? 'border-color:#FFB800' : ''}>
+            {sol.isPopular && <div class="badge-popular">{pageData.popularBadge}</div>}
+            <div style="font-size:40px;margin-bottom:16px">{iconEmoji[sol.icon] || '📦'}</div>
+            <h3 class="card-title">{sol.title}</h3>
+            <p class="solution-price">{sol.price}</p>
+            <p class="card-desc mb-4">{sol.description}</p>
+            <ul class="feature-list">
+              {sol.features.map((f) => (
+                <li class="feature-item"><span class="feature-check">✓</span>{f}</li>
+              ))}
+            </ul>
+            <a href="/consultation" class="learn-more">{sol.cta}<span>→</span></a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark section-padding">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="section-title-white">{pageData.ctaHeadline}</h2>
+      <p class="text-white/70 mb-8 max-w-2xl mx-auto">{pageData.ctaBody}</p>
+      <a href={pageData.ctaButtonPath} class="btn btn-large">{pageData.ctaButtonLabel}</a>
+    </div>
+  </section>
+</BaseLayout>

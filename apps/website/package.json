@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tinacms dev -p 3000",
-    "build": "tinacms build && astro build",
+    "dev": "tinacms dev -c \"astro dev\"",
+    "build": "astro build",
+    "build:local": "tinacms build && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .ts,.tsx",
