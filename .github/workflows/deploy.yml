@@ -91,7 +91,7 @@ jobs:
       (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
     environment:
       name: staging
-      url: https://staging.myelektra.com
+      url: https://myelektra-staging.pages.dev
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -114,8 +114,8 @@ jobs:
       - name: Run smoke tests
         run: |
           echo "Running smoke tests against staging..."
-          curl -f https://staging.myelektra.com/ || exit 1
-          curl -f https://staging.myelektra.com/solutions || exit 1
+          curl -f https://myelektra-staging.pages.dev/ || exit 1
+          curl -f https://myelektra-staging.pages.dev/solutions || exit 1
           echo "Smoke tests passed!"
 
   # =============================================================================
@@ -130,7 +130,7 @@ jobs:
       (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
     environment:
       name: production
-      url: https://myelektra.com
+      url: https://myelektra.pages.dev
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -141,28 +141,27 @@ jobs:
           name: website-dist-production
           path: apps/website/dist/
 
-      - name: Deploy to Cloudflare Workers
+      - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: apps/website
           command: pages deploy dist/ --project-name=myelektra --branch=main
-          environment: production
 
       - name: Run smoke tests
         run: |
           echo "Running smoke tests against production..."
-          curl -f https://myelektra.com/ || exit 1
-          curl -f https://myelektra.com/solutions || exit 1
+          curl -f https://myelektra.pages.dev/ || exit 1
+          curl -f https://myelektra.pages.dev/solutions || exit 1
           echo "Smoke tests passed!"
 
       - name: Notify deployment
         if: success()
         run: |
           echo "✅ Production deployment successful!"
-          echo "🌐 Website: https://myelektra.com"
-          echo "📝 TinaCMS Admin: https://myelektra.com/admin"
+          echo "🌐 Website: https://myelektra.pages.dev"
+          echo "📝 TinaCMS Admin: https://myelektra.pages.dev/admin"
 
   # =============================================================================
   # Rollback Job (Manual)
