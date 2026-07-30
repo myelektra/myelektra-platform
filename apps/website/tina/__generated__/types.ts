@@ -333,6 +333,24 @@ export type Page = Node & Document & {
   description?: Maybe<Scalars['String']['output']>;
   ogImage?: Maybe<Scalars['String']['output']>;
   draft?: Maybe<Scalars['Boolean']['output']>;
+  heroHeadline?: Maybe<Scalars['String']['output']>;
+  heroSubtitle?: Maybe<Scalars['String']['output']>;
+  heroCtaLabel?: Maybe<Scalars['String']['output']>;
+  heroCtaPath?: Maybe<Scalars['String']['output']>;
+  storyLabel?: Maybe<Scalars['String']['output']>;
+  storyHeadline?: Maybe<Scalars['String']['output']>;
+  storyParagraph1?: Maybe<Scalars['String']['output']>;
+  storyParagraph2?: Maybe<Scalars['String']['output']>;
+  missionHeadline?: Maybe<Scalars['String']['output']>;
+  missionText?: Maybe<Scalars['String']['output']>;
+  statsHeadline?: Maybe<Scalars['String']['output']>;
+  includedLabel?: Maybe<Scalars['String']['output']>;
+  popularBadge?: Maybe<Scalars['String']['output']>;
+  personasHeadline?: Maybe<Scalars['String']['output']>;
+  ctaHeadline?: Maybe<Scalars['String']['output']>;
+  ctaBody?: Maybe<Scalars['String']['output']>;
+  ctaButtonLabel?: Maybe<Scalars['String']['output']>;
+  ctaButtonPath?: Maybe<Scalars['String']['output']>;
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -362,6 +380,24 @@ export type PageFilter = {
   description?: InputMaybe<StringFilter>;
   ogImage?: InputMaybe<StringFilter>;
   draft?: InputMaybe<BooleanFilter>;
+  heroHeadline?: InputMaybe<StringFilter>;
+  heroSubtitle?: InputMaybe<StringFilter>;
+  heroCtaLabel?: InputMaybe<StringFilter>;
+  heroCtaPath?: InputMaybe<StringFilter>;
+  storyLabel?: InputMaybe<StringFilter>;
+  storyHeadline?: InputMaybe<StringFilter>;
+  storyParagraph1?: InputMaybe<StringFilter>;
+  storyParagraph2?: InputMaybe<StringFilter>;
+  missionHeadline?: InputMaybe<StringFilter>;
+  missionText?: InputMaybe<StringFilter>;
+  statsHeadline?: InputMaybe<StringFilter>;
+  includedLabel?: InputMaybe<StringFilter>;
+  popularBadge?: InputMaybe<StringFilter>;
+  personasHeadline?: InputMaybe<StringFilter>;
+  ctaHeadline?: InputMaybe<StringFilter>;
+  ctaBody?: InputMaybe<StringFilter>;
+  ctaButtonLabel?: InputMaybe<StringFilter>;
+  ctaButtonPath?: InputMaybe<StringFilter>;
   body?: InputMaybe<RichTextFilter>;
 };
 
@@ -1099,6 +1135,24 @@ export type PageMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
   ogImage?: InputMaybe<Scalars['String']['input']>;
   draft?: InputMaybe<Scalars['Boolean']['input']>;
+  heroHeadline?: InputMaybe<Scalars['String']['input']>;
+  heroSubtitle?: InputMaybe<Scalars['String']['input']>;
+  heroCtaLabel?: InputMaybe<Scalars['String']['input']>;
+  heroCtaPath?: InputMaybe<Scalars['String']['input']>;
+  storyLabel?: InputMaybe<Scalars['String']['input']>;
+  storyHeadline?: InputMaybe<Scalars['String']['input']>;
+  storyParagraph1?: InputMaybe<Scalars['String']['input']>;
+  storyParagraph2?: InputMaybe<Scalars['String']['input']>;
+  missionHeadline?: InputMaybe<Scalars['String']['input']>;
+  missionText?: InputMaybe<Scalars['String']['input']>;
+  statsHeadline?: InputMaybe<Scalars['String']['input']>;
+  includedLabel?: InputMaybe<Scalars['String']['input']>;
+  popularBadge?: InputMaybe<Scalars['String']['input']>;
+  personasHeadline?: InputMaybe<Scalars['String']['input']>;
+  ctaHeadline?: InputMaybe<Scalars['String']['input']>;
+  ctaBody?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonPath?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
@@ -1263,7 +1317,7 @@ export type WhyMyelektraMutation = {
   order?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, ogImage?: string | null, draft?: boolean | null, body?: any | null };
+export type PagePartsFragment = { __typename: 'Page', title: string, description?: string | null, ogImage?: string | null, draft?: boolean | null, heroHeadline?: string | null, heroSubtitle?: string | null, heroCtaLabel?: string | null, heroCtaPath?: string | null, storyLabel?: string | null, storyHeadline?: string | null, storyParagraph1?: string | null, storyParagraph2?: string | null, missionHeadline?: string | null, missionText?: string | null, statsHeadline?: string | null, includedLabel?: string | null, popularBadge?: string | null, personasHeadline?: string | null, ctaHeadline?: string | null, ctaBody?: string | null, ctaButtonLabel?: string | null, ctaButtonPath?: string | null, body?: any | null };
 
 export type SolutionPartsFragment = { __typename: 'Solution', title: string, price?: string | null, description?: string | null, icon?: string | null, isPopular?: boolean | null, bestFor?: string | null, cta?: string | null, metaTitle?: string | null, metaDescription?: string | null, body?: any | null, steps?: Array<{ __typename: 'SolutionSteps', title?: string | null, description?: string | null } | null> | null };
 
@@ -1288,7 +1342,7 @@ export type PageQueryVariables = Exact<{
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, description?: string | null, ogImage?: string | null, draft?: boolean | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, description?: string | null, ogImage?: string | null, draft?: boolean | null, heroHeadline?: string | null, heroSubtitle?: string | null, heroCtaLabel?: string | null, heroCtaPath?: string | null, storyLabel?: string | null, storyHeadline?: string | null, storyParagraph1?: string | null, storyParagraph2?: string | null, missionHeadline?: string | null, missionText?: string | null, statsHeadline?: string | null, includedLabel?: string | null, popularBadge?: string | null, personasHeadline?: string | null, ctaHeadline?: string | null, ctaBody?: string | null, ctaButtonLabel?: string | null, ctaButtonPath?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1300,7 +1354,7 @@ export type PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, description?: string | null, ogImage?: string | null, draft?: boolean | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, description?: string | null, ogImage?: string | null, draft?: boolean | null, heroHeadline?: string | null, heroSubtitle?: string | null, heroCtaLabel?: string | null, heroCtaPath?: string | null, storyLabel?: string | null, storyHeadline?: string | null, storyParagraph1?: string | null, storyParagraph2?: string | null, missionHeadline?: string | null, missionText?: string | null, statsHeadline?: string | null, includedLabel?: string | null, popularBadge?: string | null, personasHeadline?: string | null, ctaHeadline?: string | null, ctaBody?: string | null, ctaButtonLabel?: string | null, ctaButtonPath?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type SolutionQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1480,6 +1534,24 @@ export const PagePartsFragmentDoc = gql`
   description
   ogImage
   draft
+  heroHeadline
+  heroSubtitle
+  heroCtaLabel
+  heroCtaPath
+  storyLabel
+  storyHeadline
+  storyParagraph1
+  storyParagraph2
+  missionHeadline
+  missionText
+  statsHeadline
+  includedLabel
+  popularBadge
+  personasHeadline
+  ctaHeadline
+  ctaBody
+  ctaButtonLabel
+  ctaButtonPath
   body
 }
     `;
@@ -2327,7 +2399,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "http://localhost:4001/graphql",
+        url: "https://content.tinajs.io/2.4/content/e6b15b5f-efe0-4db0-8ec6-531859025cc0/github/main",
         queries,
       })
     )

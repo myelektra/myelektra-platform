@@ -119,6 +119,24 @@ type Page implements Node & Document {
   description: String
   ogImage: String
   draft: Boolean
+  heroHeadline: String
+  heroSubtitle: String
+  heroCtaLabel: String
+  heroCtaPath: String
+  storyLabel: String
+  storyHeadline: String
+  storyParagraph1: String
+  storyParagraph2: String
+  missionHeadline: String
+  missionText: String
+  statsHeadline: String
+  includedLabel: String
+  popularBadge: String
+  personasHeadline: String
+  ctaHeadline: String
+  ctaBody: String
+  ctaButtonLabel: String
+  ctaButtonPath: String
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -148,6 +166,24 @@ input PageFilter {
   description: StringFilter
   ogImage: StringFilter
   draft: BooleanFilter
+  heroHeadline: StringFilter
+  heroSubtitle: StringFilter
+  heroCtaLabel: StringFilter
+  heroCtaPath: StringFilter
+  storyLabel: StringFilter
+  storyHeadline: StringFilter
+  storyParagraph1: StringFilter
+  storyParagraph2: StringFilter
+  missionHeadline: StringFilter
+  missionText: StringFilter
+  statsHeadline: StringFilter
+  includedLabel: StringFilter
+  popularBadge: StringFilter
+  personasHeadline: StringFilter
+  ctaHeadline: StringFilter
+  ctaBody: StringFilter
+  ctaButtonLabel: StringFilter
+  ctaButtonPath: StringFilter
   body: RichTextFilter
 }
 
@@ -687,6 +723,24 @@ input PageMutation {
   description: String
   ogImage: String
   draft: Boolean
+  heroHeadline: String
+  heroSubtitle: String
+  heroCtaLabel: String
+  heroCtaPath: String
+  storyLabel: String
+  storyHeadline: String
+  storyParagraph1: String
+  storyParagraph2: String
+  missionHeadline: String
+  missionText: String
+  statsHeadline: String
+  includedLabel: String
+  popularBadge: String
+  personasHeadline: String
+  ctaHeadline: String
+  ctaBody: String
+  ctaButtonLabel: String
+  ctaButtonPath: String
   body: JSON
 }
 

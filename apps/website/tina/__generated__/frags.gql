@@ -4,6 +4,24 @@ fragment PageParts on Page {
   description
   ogImage
   draft
+  heroHeadline
+  heroSubtitle
+  heroCtaLabel
+  heroCtaPath
+  storyLabel
+  storyHeadline
+  storyParagraph1
+  storyParagraph2
+  missionHeadline
+  missionText
+  statsHeadline
+  includedLabel
+  popularBadge
+  personasHeadline
+  ctaHeadline
+  ctaBody
+  ctaButtonLabel
+  ctaButtonPath
   body
 }
 

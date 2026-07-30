@@ -10,23 +10,25 @@
  */
 
 import { defineConfig } from 'tinacms';
-import { config } from 'dotenv';
-import { resolve } from 'path';
-
-// Load .env.local for local development
-// TinaCloud injects TINA_CLIENT_ID and TINA_TOKEN automatically
-if (process.env.NODE_ENV !== 'production') {
-  // .env.local is at project root, TinaCMS runs from apps/website/
-  config({ path: resolve(process.cwd(), '../../.env.local') });
-}
 
 // =============================================================================
 // Branch Configuration
 // =============================================================================
 
-const branch = process.env.TINA_BRANCH || 'main';
-const clientId = process.env.TINA_CLIENT_ID || '';
-const token = process.env.TINA_TOKEN || '';
+// For Cloudflare Workers, read branch from CF_PAGES_BRANCH
+// For local dev, use HEAD or fallback to main
+const branch =
+  process.env.CF_PAGES_BRANCH ||
+  process.env.TINA_BRANCH ||
+  process.env.HEAD ||
+  process.env.VERCEL_GIT_COMMIT_REF ||
+  'main';
+
+// Tina Cloud credentials
+// In production, these come from Cloudflare Workers environment secrets
+// In local dev, these come from .env file
+const clientId = process.env.TINA_CLIENT_ID || null;
+const token = process.env.TINA_TOKEN || null;
 
 // =============================================================================
 // TinaCMS Configuration
@@ -44,11 +46,18 @@ export default defineConfig({
     outputFolder: 'admin',
   },
 
-  // Media configuration (optional - can use local or cloud storage)
   media: {
     tina: {
       publicFolder: 'public',
       mediaRoot: 'uploads',
+    },
+  },
+
+  ui: {
+    previewUrl: () => {
+      return {
+        url: process.env.PUBLIC_SITE_URL || 'http://localhost:3000',
+      };
     },
   },
 
@@ -88,6 +97,109 @@ export default defineConfig({
             name: 'draft',
             label: 'Draft',
           },
+          // ---- Hero Section ----
+          {
+            type: 'string',
+            name: 'heroHeadline',
+            label: 'Hero Headline',
+          },
+          {
+            type: 'string',
+            name: 'heroSubtitle',
+            label: 'Hero Subtitle',
+            ui: { component: 'textarea' },
+          },
+          {
+            type: 'string',
+            name: 'heroCtaLabel',
+            label: 'Hero CTA Label',
+          },
+          {
+            type: 'string',
+            name: 'heroCtaPath',
+            label: 'Hero CTA Path',
+          },
+          // ---- Story Section (About page) ----
+          {
+            type: 'string',
+            name: 'storyLabel',
+            label: 'Story Label',
+          },
+          {
+            type: 'string',
+            name: 'storyHeadline',
+            label: 'Story Headline',
+          },
+          {
+            type: 'string',
+            name: 'storyParagraph1',
+            label: 'Story Paragraph 1',
+            ui: { component: 'textarea' },
+          },
+          {
+            type: 'string',
+            name: 'storyParagraph2',
+            label: 'Story Paragraph 2',
+            ui: { component: 'textarea' },
+          },
+          // ---- Mission Section ----
+          {
+            type: 'string',
+            name: 'missionHeadline',
+            label: 'Mission Headline',
+          },
+          {
+            type: 'string',
+            name: 'missionText',
+            label: 'Mission Text',
+            ui: { component: 'textarea' },
+          },
+          // ---- Stats Section ----
+          {
+            type: 'string',
+            name: 'statsHeadline',
+            label: 'Stats Headline',
+          },
+          // ---- Solutions Page Fields ----
+          {
+            type: 'string',
+            name: 'includedLabel',
+            label: 'Included Label',
+          },
+          {
+            type: 'string',
+            name: 'popularBadge',
+            label: 'Popular Badge Text',
+          },
+          // ---- Industries Page Fields ----
+          {
+            type: 'string',
+            name: 'personasHeadline',
+            label: 'Personas Headline',
+          },
+          // ---- CTA Section (common) ----
+          {
+            type: 'string',
+            name: 'ctaHeadline',
+            label: 'CTA Headline',
+          },
+          {
+            type: 'string',
+            name: 'ctaBody',
+            label: 'CTA Body',
+            ui: { component: 'textarea' },
+          },
+          {
+            type: 'string',
+            name: 'ctaButtonLabel',
+            label: 'CTA Button Label',
+          },
+          {
+            type: 'string',
+            name: 'ctaButtonPath',
+            label: 'CTA Button Path',
+          },
+          // ---- Body ----
           {
             type: 'rich-text',
             name: 'body',

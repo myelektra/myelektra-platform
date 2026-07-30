@@ -1,8 +1,8 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
-var branch = process.env.TINA_BRANCH || "main";
-var clientId = process.env.TINA_CLIENT_ID || "";
-var token = process.env.TINA_TOKEN || "";
+var branch = process.env.CF_PAGES_BRANCH || process.env.TINA_BRANCH || process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+var clientId = process.env.TINA_CLIENT_ID || null;
+var token = process.env.TINA_TOKEN || null;
 var config_default = defineConfig({
   // Git provider configuration
   branch,
@@ -13,11 +13,17 @@ var config_default = defineConfig({
     publicFolder: "public",
     outputFolder: "admin"
   },
-  // Media configuration (optional - can use local or cloud storage)
   media: {
     tina: {
       publicFolder: "public",
       mediaRoot: "uploads"
+    }
+  },
+  ui: {
+    previewUrl: () => {
+      return {
+        url: process.env.PUBLIC_SITE_URL || "http://localhost:3000"
+      };
     }
   },
   // Schema collections
@@ -56,6 +62,109 @@ var config_default = defineConfig({
             name: "draft",
             label: "Draft"
           },
+          // ---- Hero Section ----
+          {
+            type: "string",
+            name: "heroHeadline",
+            label: "Hero Headline"
+          },
+          {
+            type: "string",
+            name: "heroSubtitle",
+            label: "Hero Subtitle",
+            ui: { component: "textarea" }
+          },
+          {
+            type: "string",
+            name: "heroCtaLabel",
+            label: "Hero CTA Label"
+          },
+          {
+            type: "string",
+            name: "heroCtaPath",
+            label: "Hero CTA Path"
+          },
+          // ---- Story Section (About page) ----
+          {
+            type: "string",
+            name: "storyLabel",
+            label: "Story Label"
+          },
+          {
+            type: "string",
+            name: "storyHeadline",
+            label: "Story Headline"
+          },
+          {
+            type: "string",
+            name: "storyParagraph1",
+            label: "Story Paragraph 1",
+            ui: { component: "textarea" }
+          },
+          {
+            type: "string",
+            name: "storyParagraph2",
+            label: "Story Paragraph 2",
+            ui: { component: "textarea" }
+          },
+          // ---- Mission Section ----
+          {
+            type: "string",
+            name: "missionHeadline",
+            label: "Mission Headline"
+          },
+          {
+            type: "string",
+            name: "missionText",
+            label: "Mission Text",
+            ui: { component: "textarea" }
+          },
+          // ---- Stats Section ----
+          {
+            type: "string",
+            name: "statsHeadline",
+            label: "Stats Headline"
+          },
+          // ---- Solutions Page Fields ----
+          {
+            type: "string",
+            name: "includedLabel",
+            label: "Included Label"
+          },
+          {
+            type: "string",
+            name: "popularBadge",
+            label: "Popular Badge Text"
+          },
+          // ---- Industries Page Fields ----
+          {
+            type: "string",
+            name: "personasHeadline",
+            label: "Personas Headline"
+          },
+          // ---- CTA Section (common) ----
+          {
+            type: "string",
+            name: "ctaHeadline",
+            label: "CTA Headline"
+          },
+          {
+            type: "string",
+            name: "ctaBody",
+            label: "CTA Body",
+            ui: { component: "textarea" }
+          },
+          {
+            type: "string",
+            name: "ctaButtonLabel",
+            label: "CTA Button Label"
+          },
+          {
+            type: "string",
+            name: "ctaButtonPath",
+            label: "CTA Button Path"
+          },
+          // ---- Body ----
           {
             type: "rich-text",
             name: "body",

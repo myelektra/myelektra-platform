@@ -12,6 +12,24 @@ export const PagePartsFragmentDoc = gql`
   description
   ogImage
   draft
+  heroHeadline
+  heroSubtitle
+  heroCtaLabel
+  heroCtaPath
+  storyLabel
+  storyHeadline
+  storyParagraph1
+  storyParagraph2
+  missionHeadline
+  missionText
+  statsHeadline
+  includedLabel
+  popularBadge
+  personasHeadline
+  ctaHeadline
+  ctaBody
+  ctaButtonLabel
+  ctaButtonPath
   body
 }
     `;
@@ -833,7 +851,7 @@ const generateRequester = (client) => {
 export const ExperimentalGetTinaClient = () => getSdk(
   generateRequester(
     createClient({
-      url: "http://localhost:4001/graphql",
+      url: "https://content.tinajs.io/2.4/content/e6b15b5f-efe0-4db0-8ec6-531859025cc0/github/main",
       queries
     })
   )
