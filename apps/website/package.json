@@ -17,25 +17,26 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.0.0",
     "@astrojs/react": "^4.0.0",
+    "@myelektra/config": "workspace:*",
+    "@myelektra/types": "workspace:*",
+    "@myelektra/ui": "workspace:*",
+    "@myelektra/utils": "workspace:*",
+    "@tinacms/cli": "^2.0.0",
     "astro": "^5.0.0",
+    "dotenv": "^17.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tinacms": "^2.0.0",
-    "@tinacms/cli": "^2.0.0",
-    "@myelektra/ui": "workspace:*",
-    "@myelektra/types": "workspace:*",
-    "@myelektra/utils": "workspace:*",
-    "@myelektra/config": "workspace:*"
+    "tinacms": "^2.0.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.9.0",
-    "vitest": "^3.0.0",
-    "eslint": "^9.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0"
+    "vitest": "^3.0.0"
   }
 }

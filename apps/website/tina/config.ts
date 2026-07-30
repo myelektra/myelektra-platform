@@ -10,6 +10,11 @@
  */
 
 import { defineConfig } from 'tinacms';
+import { config } from 'dotenv';
+import { resolve } from 'path';
+
+// Load .env.local from project root (two levels up from apps/website/tina/)
+config({ path: resolve(__dirname, '../../.env.local') });
 
 // =============================================================================
 // Branch Configuration
