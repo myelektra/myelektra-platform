@@ -1,123 +1,106 @@
-// =============================================================================
-// Astro Content Collections Configuration
-// =============================================================================
-// Defines schemas for all TinaCMS-managed content
-// Used for type-safe content loading in Astro pages
-// =============================================================================
+import config from ".astro/config.generated.json";
+import { defineCollection } from "astro:content";
+import { button, sectionsSchema } from "./sections.schema";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+const servicesFolder = config.settings.servicesFolder || "services";
 
-// =============================================================================
-// Pages Collection (MDX)
-// =============================================================================
+const contentLoader = (base: string) =>
+  glob({ pattern: "**/[^_]*.{md,mdx}", base });
 
-const pages = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.mdx', base: './content/pages' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    ogImage: z.string().optional(),
-    draft: z.boolean().optional(),
-    body: z.any().optional(), // TinaCMS rich-text body
+const basePage = z.object({
+  title: z.string(),
+  breadcrumbTitle: z.string().optional(),
+  author: z.string().optional(),
+  categories: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
+  date: z.date().optional(),
+  description: z.string().optional(),
+  image: z.string().optional(),
+  imageAlt: z.string().optional(),
+  weight: z.number().optional(),
+  draft: z.boolean().optional(),
+  button: button.optional(),
+  metaTitle: z.string().optional(),
+  metaDescription: z.string().optional(),
+  robots: z.string().optional(),
+  excludeFromSitemap: z.boolean().optional(),
+  excludeFromCollection: z.boolean().optional(),
+  customSlug: z.string().optional(),
+  canonical: z.string().optional(),
+  keywords: z.array(z.string()).optional(),
+  disableTagline: z.boolean().optional(),
+});
+
+export const page = basePage.extend(sectionsSchema.shape);
+
+export const marqueeConfig = z.object({
+  elementWidth: z.string(),
+  elementWidthAuto: z.boolean(),
+  elementWidthInSmallDevices: z.string(),
+  pauseOnHover: z.boolean(),
+  reverse: z.enum(["reverse", ""]).optional(),
+  duration: z.string(),
+});
+
+const serviceCollection = defineCollection({
+  loader: contentLoader(`./src/content/${servicesFolder}`),
+  schema: page.extend({
+    icon: z.string().optional(),
+    imagePosition: z.string().optional(),
+    image3: z.string().optional(),
   }),
 });
 
-// =============================================================================
-// Solutions Collection (MD)
-// =============================================================================
-
-const solutions = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './content/solutions' }),
-  schema: z.object({
-    title: z.string(),
-    price: z.string().optional(),
-    description: z.string().optional(),
-    icon: z.enum(['bronze', 'silver', 'gold', 'platinum', 'diamond']).optional(),
-    isPopular: z.boolean().optional(),
-    bestFor: z.string().optional(),
-    cta: z.string().optional(),
-    metaTitle: z.string().optional(),
-    metaDescription: z.string().optional(),
-    steps: z.array(z.object({
-      title: z.string(),
-      description: z.string(),
-    })).optional(),
+export const teamCollection = defineCollection({
+  loader: contentLoader("./src/content/team"),
+  schema: page.extend({
+    image: z.string().optional(),
+    profession: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    social: z
+      .array(
+        z.object({
+          enable: z.boolean(),
+          label: z.string(),
+          icon: z.string(),
+          url: z.string(),
+        }),
+      )
+      .optional(),
+    list: z
+      .array(
+        z.object({
+          name: z.string(),
+          role: z.string(),
+          image: z.string(),
+          status: z.string(),
+          social: z.object({
+            enable: z.boolean(),
+            list: z.array(
+              z.object({
+                enable: z.boolean(),
+                label: z.string(),
+                icon: z.string(),
+                url: z.string(),
+              }),
+            ),
+          }),
+        }),
+      )
+      .optional(),
   }),
 });
-
-// =============================================================================
-// Industries Collection (MD)
-// =============================================================================
-
-const industries = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './content/industries' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    icon: z.enum(['manufacturing', 'saas', 'banking', 'bpo', 'consulting']).optional(),
-    metaTitle: z.string().optional(),
-    metaDescription: z.string().optional(),
-    personas: z.array(z.object({
-      name: z.string(),
-      description: z.string().optional(),
-    })).optional(),
-  }),
-});
-
-// =============================================================================
-// Why Myelektra Collection (MD)
-// =============================================================================
-
-const whyMyelektra = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './content/why-myelektra' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    icon: z.enum(['brain', 'hubspot', 'quality', 'report', 'globe', 'revenue']).optional(),
-    order: z.number().optional(),
-  }),
-});
-
-// =============================================================================
-// Client Logos Collection (MD)
-// =============================================================================
-
-const clientLogos = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './content/client-logos' }),
-  schema: z.object({
-    title: z.string(),
-    logo: z.string().optional(),
-    website: z.string().optional(),
-    order: z.number().optional(),
-  }),
-});
-
-// =============================================================================
-// Countries Collection (MD)
-// =============================================================================
-
-const countries = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './content/countries' }),
-  schema: z.object({
-    title: z.string(),
-    flagAccent: z.string().optional(),
-    personas: z.array(z.object({
-      name: z.string(),
-    })).optional(),
-    order: z.number().optional(),
-  }),
-});
-
-// =============================================================================
-// Export Collections
-// =============================================================================
 
 export const collections = {
-  pages,
-  solutions,
-  industries,
-  whyMyelektra,
-  clientLogos,
-  countries,
+  [servicesFolder]: serviceCollection,
+  services: serviceCollection,
+  sections: defineCollection({
+    loader: contentLoader("./src/content/sections"),
+  }),
+  homepage: defineCollection({
+    loader: contentLoader("./src/content/homepage"),
+  }),
 };

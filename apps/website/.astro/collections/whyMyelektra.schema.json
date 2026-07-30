@@ -1,0 +1,38 @@
+{
+  "$ref": "#/definitions/whyMyelektra",
+  "definitions": {
+    "whyMyelektra": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string",
+          "enum": [
+            "brain",
+            "hubspot",
+            "quality",
+            "report",
+            "globe",
+            "revenue"
+          ]
+        },
+        "order": {
+          "type": "number"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

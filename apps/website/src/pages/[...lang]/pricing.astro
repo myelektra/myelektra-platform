@@ -1,0 +1,57 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import ContactSection from "@/components/sections/ContactSection.astro";
+import SectionTitle from "@/components/global/SectionTitle.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const plans = [
+  { name: 'Revenue Intelligence', price: '[Book Meeting]', desc: 'Build a focused market-entry and prospecting foundation.', icon: 'ChartBar', popular: false, features: ['ICP development & market-entry analysis', 'Buyer persona mapping', 'Up to 300 verified contacts', 'Revenue opportunity report'] },
+  { name: 'Pipeline Builder', price: 'USD x,xxx/mo', desc: 'Turn approved buyer personas into qualified conversations.', icon: 'Workflow', popular: true, features: ['HubSpot CRM setup', 'AI-assisted prospecting', 'Human SDR follow-up', 'Weekly reporting'] },
+  { name: 'Revenue Engine', price: 'USD x,xxx/mo', desc: 'Integrated system from prospecting to pipeline management.', icon: 'Settings', popular: false, features: ['Everything in Pipeline Builder', 'Workflow automation', 'Pipeline management', 'Revenue forecasting'] },
+  { name: 'AI Sales Transformation', price: '[Book Meeting]', desc: 'Transform manual sales into AI-assisted workflows.', icon: 'Bot', popular: false, features: ['AI readiness assessment', 'HubSpot AI setup', 'AI sales playbook', 'Team training'] },
+  { name: 'Fractional Revenue Office', price: 'USD x,xxx–xx,xxx/mo', desc: 'Senior revenue leadership without full-time hire.', icon: 'Building2', popular: false, features: ['Revenue strategy & planning', 'SDR team management', 'Quarterly growth planning', 'Executive reporting'] },
+];
+
+const meta = { title: 'Pricing', description: 'Flexible pricing for every growth stage.' };
+---
+
+<Base {...meta}>
+  <section class="section-light section-padding" style="background:linear-gradient(135deg, rgba(11,17,32,0.92), rgba(0,82,204,0.85));min-height:40vh;display:flex;align-items:center">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Transparent Pricing</h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">Choose the solution that fits your growth stage and budget. All plans are flexible and can be customized.</p>
+    </div>
+  </section>
+
+  <section id="pricing-list" class="py-20" style="background:#f8f9fc">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {plans.map((plan) => (
+          <div class="solution-card" style={plan.popular ? 'border-color:#FFB800;transform:scale(1.05)' : ''}>
+            {plan.popular && <div class="badge-popular">Most Popular</div>}
+            <div style="font-size:40px;margin-bottom:16px" data-lucide={plan.icon}></div>
+            <h3 class="card-title">{plan.name}</h3>
+            <p class="solution-price">{plan.price}</p>
+            <p class="card-desc mb-4">{plan.desc}</p>
+            <div class="mb-3">
+              <h4 class="text-xs font-semibold uppercase tracking-wider mb-2" style="color:#00C896">What's Included:</h4>
+            </div>
+            <ul class="feature-list">
+              {plan.features.map((f) => (
+                <li class="feature-item"><span class="feature-check">✓</span>{f}</li>
+              ))}
+            </ul>
+            <a href="/consultation" class="learn-more">Get Started <span>→</span></a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+</Base>

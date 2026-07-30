@@ -1,0 +1,67 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import ContactSection from "@/components/sections/ContactSection.astro";
+import SectionTitle from "@/components/global/SectionTitle.astro";
+import SectionBadge from "@/components/global/SectionBadge.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const meta = { title: 'About', description: 'AI-powered revenue growth partner for B2B companies.' };
+---
+
+<Base {...meta}>
+  <section class="section-light section-padding" style="background:linear-gradient(135deg, rgba(11,17,32,0.92), rgba(0,82,204,0.85));min-height:40vh;display:flex;align-items:center">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">About Myelektra</h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">AI-powered revenue growth partner helping B2B companies move from scattered prospecting to structured, measurable revenue systems.</p>
+    </div>
+  </section>
+
+  <section class="section-light py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <SectionBadge title="Our Story" />
+        <SectionTitle title="From Buyer Persona to Revenue Pipeline" />
+      </div>
+      <div class="space-y-6 max-w-3xl mx-auto">
+        <p class="text-lg leading-relaxed" style="color:rgba(11,17,32,0.7)">Myelektra was founded with a clear observation: most B2B companies struggle not because they lack data, but because they lack a system. They have spreadsheets of contacts, lists of leads, and CRM databases — but no structured process to turn those into revenue.</p>
+        <p class="text-lg leading-relaxed" style="color:rgba(11,17,32,0.7)">Our approach combines AI-powered insights with human expertise to create revenue systems that are measurable, scalable, and sustainable. We help companies move from scattered prospecting to a structured, repeatable revenue engine.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20" style="background:linear-gradient(135deg, rgba(11,17,32,0.95), rgba(0,82,204,0.9));">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.6)">Our Mission</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-white">To help B2B companies build predictable revenue systems that combine technology, process, and people.</h2>
+    </div>
+  </section>
+
+  <section class="py-20" style="background:#f8f9fc">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+      <SectionTitle title="Our Impact" />
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card text-center">
+          <div class="text-4xl font-bold" style="color:#00C896" data-aos="fade-up">7+</div>
+          <p class="mt-2" style="color:rgba(11,17,32,0.6)">Countries</p>
+        </div>
+        <div class="card text-center">
+          <div class="text-4xl font-bold" style="color:#00C896" data-aos="fade-up" data-aos-delay="100">5</div>
+          <p class="mt-2" style="color:rgba(11,17,32,0.6)">Solutions</p>
+        </div>
+        <div class="card text-center">
+          <div class="text-4xl font-bold" style="color:#00C896" data-aos="fade-up" data-aos-delay="200">1</div>
+          <p class="mt-2" style="color:rgba(11,17,32,0.6)">Integrated System</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+</Base>

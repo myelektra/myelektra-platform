@@ -1,0 +1,3686 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "breadcrumbTitle": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "draft": {
+      "type": "boolean"
+    },
+    "button": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "type": "boolean"
+        },
+        "tag": {
+          "type": "string",
+          "enum": [
+            "a",
+            "button"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "target": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "name": {
+              "type": "string"
+            },
+            "position": {
+              "type": "string",
+              "enum": [
+                "left",
+                "right"
+              ]
+            },
+            "className": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "hoverEffect": {
+          "type": "string",
+          "enum": [
+            "text-flip",
+            "creative-fill",
+            "magnetic",
+            "magnetic-text-flip",
+            "none"
+          ]
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "fill",
+            "outline",
+            "text",
+            "white"
+          ]
+        }
+      },
+      "required": [
+        "label"
+      ],
+      "additionalProperties": {}
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "robots": {
+      "type": "string"
+    },
+    "excludeFromSitemap": {
+      "type": "boolean"
+    },
+    "excludeFromCollection": {
+      "type": "boolean"
+    },
+    "customSlug": {
+      "type": "string"
+    },
+    "canonical": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disableTagline": {
+      "type": "boolean"
+    },
+    "contactSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": false,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "characterImage": {
+          "type": "string"
+        },
+        "characterImageAlt": {
+          "type": "string"
+        },
+        "contactInformation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "button": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "enum": [
+                      "a",
+                      "button"
+                    ]
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "class": {
+                    "type": "string"
+                  },
+                  "rel": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "properties": {
+                      "enable": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "position": {
+                        "type": "string",
+                        "enum": [
+                          "left",
+                          "right"
+                        ]
+                      },
+                      "className": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ]
+                  },
+                  "hoverEffect": {
+                    "type": "string",
+                    "enum": [
+                      "text-flip",
+                      "creative-fill",
+                      "magnetic",
+                      "magnetic-text-flip",
+                      "none"
+                    ]
+                  },
+                  "variant": {
+                    "type": "string",
+                    "enum": [
+                      "fill",
+                      "outline",
+                      "text",
+                      "white"
+                    ]
+                  }
+                },
+                "required": [
+                  "label"
+                ],
+                "additionalProperties": {}
+              }
+            },
+            "required": [
+              "title",
+              "icon",
+              "description"
+            ]
+          }
+        },
+        "form": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string"
+            },
+            "emailSubject": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "submitButton": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "placeholder": {
+                    "type": "string"
+                  },
+                  "required": {
+                    "type": "boolean"
+                  },
+                  "halfWidth": {
+                    "type": "boolean"
+                  },
+                  "defaultValue": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "selected": {
+                    "type": "boolean"
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "checked": {
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "email",
+                      "radio",
+                      "checkbox"
+                    ]
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "const": "textarea"
+                  },
+                  "rows": {
+                    "type": "string"
+                  },
+                  "group": {
+                    "type": "string"
+                  },
+                  "groupLabel": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        },
+                        "groupLabel": {
+                          "type": "string"
+                        },
+                        "group": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "radio",
+                            "checkbox"
+                          ]
+                        },
+                        "halfWidth": {
+                          "type": "boolean"
+                        },
+                        "defaultValue": {
+                          "type": "string"
+                        },
+                        "checked": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "label"
+                      ]
+                    }
+                  },
+                  "dropdown": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "select",
+                          "search"
+                        ]
+                      },
+                      "search": {
+                        "type": "object",
+                        "properties": {
+                          "placeholder": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string"
+                            },
+                            "selected": {
+                              "type": "boolean"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "label",
+                            "value"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "items"
+                    ]
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "note": {
+                    "type": "string",
+                    "enum": [
+                      "info",
+                      "warning",
+                      "success",
+                      "deprecated",
+                      "hint"
+                    ]
+                  },
+                  "parentClass": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "submitButton",
+            "inputs"
+          ]
+        },
+        "testimonial": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            },
+            "content": {
+              "type": "string"
+            },
+            "customer": {
+              "type": "object",
+              "properties": {
+                "avatar": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "avatar",
+                "name",
+                "role"
+              ]
+            }
+          },
+          "required": [
+            "customer"
+          ]
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "title",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "badge",
+        "title",
+        "description",
+        "contactInformation",
+        "form",
+        "testimonial",
+        "list"
+      ]
+    },
+    "commentFormSchema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "emailSubject": {
+          "type": "string"
+        },
+        "submitButton": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label"
+          ]
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "placeholder": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "halfWidth": {
+                "type": "boolean"
+              },
+              "defaultValue": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "selected": {
+                "type": "boolean"
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "checked": {
+                "type": "boolean"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "email",
+                  "radio",
+                  "checkbox"
+                ]
+              },
+              "id": {
+                "type": "string"
+              },
+              "tag": {
+                "type": "string",
+                "const": "textarea"
+              },
+              "rows": {
+                "type": "string"
+              },
+              "group": {
+                "type": "string"
+              },
+              "groupLabel": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "groupLabel": {
+                      "type": "string"
+                    },
+                    "group": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "radio",
+                        "checkbox"
+                      ]
+                    },
+                    "halfWidth": {
+                      "type": "boolean"
+                    },
+                    "defaultValue": {
+                      "type": "string"
+                    },
+                    "checked": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ]
+                }
+              },
+              "dropdown": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "select",
+                      "search"
+                    ]
+                  },
+                  "search": {
+                    "type": "object",
+                    "properties": {
+                      "placeholder": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "selected": {
+                          "type": "boolean"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "value"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "items"
+                ]
+              },
+              "content": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string",
+                "enum": [
+                  "info",
+                  "warning",
+                  "success",
+                  "deprecated",
+                  "hint"
+                ]
+              },
+              "parentClass": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "submitButton",
+        "inputs"
+      ]
+    },
+    "commentSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": false,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "form": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "emailSubject": {
+              "type": "string"
+            },
+            "submitButton": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label"
+              ]
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "placeholder": {
+                    "type": "string"
+                  },
+                  "required": {
+                    "type": "boolean"
+                  },
+                  "halfWidth": {
+                    "type": "boolean"
+                  },
+                  "defaultValue": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "selected": {
+                    "type": "boolean"
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "checked": {
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "email",
+                      "radio",
+                      "checkbox"
+                    ]
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "const": "textarea"
+                  },
+                  "rows": {
+                    "type": "string"
+                  },
+                  "group": {
+                    "type": "string"
+                  },
+                  "groupLabel": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        },
+                        "groupLabel": {
+                          "type": "string"
+                        },
+                        "group": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "radio",
+                            "checkbox"
+                          ]
+                        },
+                        "halfWidth": {
+                          "type": "boolean"
+                        },
+                        "defaultValue": {
+                          "type": "string"
+                        },
+                        "checked": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "label"
+                      ]
+                    }
+                  },
+                  "dropdown": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "select",
+                          "search"
+                        ]
+                      },
+                      "search": {
+                        "type": "object",
+                        "properties": {
+                          "placeholder": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string"
+                            },
+                            "selected": {
+                              "type": "boolean"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "label",
+                            "value"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "items"
+                    ]
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "note": {
+                    "type": "string",
+                    "enum": [
+                      "info",
+                      "warning",
+                      "success",
+                      "deprecated",
+                      "hint"
+                    ]
+                  },
+                  "parentClass": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "submitButton",
+            "inputs"
+          ]
+        }
+      },
+      "required": [
+        "title",
+        "form"
+      ]
+    },
+    "teamSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": false,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "image",
+              "role"
+            ]
+          }
+        }
+      },
+      "required": [
+        "list"
+      ]
+    },
+    "testimonialSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "limit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean",
+              "const": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "limit"
+      ]
+    },
+    "pricingSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": false,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "pricingComparisonTitle": {
+          "type": "string"
+        },
+        "pricingComparisonTogglerLabel": {
+          "type": "string"
+        },
+        "plans": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            },
+            "list": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "selected": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label"
+                ]
+              }
+            }
+          },
+          "required": [
+            "list"
+          ]
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "enable": {
+                "default": true,
+                "type": "boolean"
+              },
+              "icon": {
+                "type": "string"
+              },
+              "featured": {
+                "default": false,
+                "type": "boolean"
+              },
+              "featuresLabel": {
+                "type": "string"
+              },
+              "badge": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "variant": {
+                    "type": "string",
+                    "enum": [
+                      "popular",
+                      "new",
+                      "recommended"
+                    ]
+                  }
+                },
+                "required": [
+                  "label"
+                ]
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "price": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "prependValue": {
+                      "type": "string"
+                    },
+                    "appendValue": {
+                      "type": "string"
+                    },
+                    "typeAlternateValue": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "features": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "button": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "enum": [
+                      "a",
+                      "button"
+                    ]
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "class": {
+                    "type": "string"
+                  },
+                  "rel": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "properties": {
+                      "enable": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "position": {
+                        "type": "string",
+                        "enum": [
+                          "left",
+                          "right"
+                        ]
+                      },
+                      "className": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ]
+                  },
+                  "hoverEffect": {
+                    "type": "string",
+                    "enum": [
+                      "text-flip",
+                      "creative-fill",
+                      "magnetic",
+                      "magnetic-text-flip",
+                      "none"
+                    ]
+                  },
+                  "variant": {
+                    "type": "string",
+                    "enum": [
+                      "fill",
+                      "outline",
+                      "text",
+                      "white"
+                    ]
+                  }
+                },
+                "required": [
+                  "label"
+                ],
+                "additionalProperties": {}
+              }
+            },
+            "required": [
+              "name",
+              "description"
+            ]
+          }
+        },
+        "comparison": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "popover": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "default": false,
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "description"
+                ]
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "showInCard": {
+                      "type": "boolean"
+                    },
+                    "included": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    },
+                    "popover": {
+                      "type": "object",
+                      "properties": {
+                        "enable": {
+                          "default": false,
+                          "type": "boolean"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "description"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "showInCard",
+                    "included"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "label",
+              "list"
+            ]
+          }
+        }
+      },
+      "required": [
+        "list"
+      ]
+    },
+    "heroSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "decorativeImage": {
+          "type": "string"
+        },
+        "ArrowdecorationImage": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageFrame": {
+          "type": "string"
+        },
+        "lineShape": {
+          "type": "string"
+        },
+        "gradientLeft": {
+          "type": "string"
+        },
+        "gradientRight": {
+          "type": "string"
+        },
+        "announcementBar": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "avatars": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "label"
+          ]
+        },
+        "leftBlock": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "images": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string"
+                  },
+                  "alt": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src",
+                  "alt"
+                ]
+              }
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "outlined": {
+                    "default": false,
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          },
+          "required": [
+            "title",
+            "description"
+          ]
+        },
+        "rightBlock": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "author": {
+              "type": "string"
+            },
+            "icons": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "author",
+            "icons"
+          ]
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "button",
+                "video"
+              ]
+            },
+            "video": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "provider": {
+                  "default": "youtube",
+                  "type": "string",
+                  "enum": [
+                    "youtube",
+                    "vimeo",
+                    "html5"
+                  ]
+                },
+                "poster": {
+                  "type": "string"
+                },
+                "autoplay": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        },
+        "buttonPlay": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "button",
+                "video"
+              ]
+            },
+            "video": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "provider": {
+                  "default": "youtube",
+                  "type": "string",
+                  "enum": [
+                    "youtube",
+                    "vimeo",
+                    "html5"
+                  ]
+                },
+                "poster": {
+                  "type": "string"
+                },
+                "autoplay": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "socialLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "hoverEffect": {
+                "type": "string",
+                "enum": [
+                  "text-flip",
+                  "creative-fill",
+                  "magnetic",
+                  "magnetic-text-flip",
+                  "none"
+                ]
+              }
+            },
+            "required": [
+              "label",
+              "url"
+            ]
+          }
+        },
+        "satisfactionClients": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            },
+            "count": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "avatars": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "avatarAlt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "count",
+            "label"
+          ]
+        },
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "button": {
+                "type": "object",
+                "properties": {
+                  "enable": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "enum": [
+                      "a",
+                      "button"
+                    ]
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "class": {
+                    "type": "string"
+                  },
+                  "rel": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "object",
+                    "properties": {
+                      "enable": {
+                        "type": "boolean"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "position": {
+                        "type": "string",
+                        "enum": [
+                          "left",
+                          "right"
+                        ]
+                      },
+                      "className": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ]
+                  },
+                  "hoverEffect": {
+                    "type": "string",
+                    "enum": [
+                      "text-flip",
+                      "creative-fill",
+                      "magnetic",
+                      "magnetic-text-flip",
+                      "none"
+                    ]
+                  },
+                  "variant": {
+                    "type": "string",
+                    "enum": [
+                      "fill",
+                      "outline",
+                      "text",
+                      "white"
+                    ]
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "button",
+                      "video"
+                    ]
+                  },
+                  "video": {
+                    "type": "object",
+                    "properties": {
+                      "src": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "default": "youtube",
+                        "type": "string",
+                        "enum": [
+                          "youtube",
+                          "vimeo",
+                          "html5"
+                        ]
+                      },
+                      "poster": {
+                        "type": "string"
+                      },
+                      "autoplay": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "src"
+                    ]
+                  }
+                },
+                "required": [
+                  "label"
+                ],
+                "additionalProperties": {}
+              }
+            },
+            "required": [
+              "image"
+            ]
+          }
+        },
+        "featuresGrid": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": false,
+              "type": "boolean"
+            },
+            "bgShape": {
+              "type": "string"
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "icon": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "description"
+                ]
+              }
+            }
+          },
+          "required": [
+            "features"
+          ]
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "video": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "provider": {
+              "type": "string",
+              "enum": [
+                "youtube",
+                "vimeo",
+                "html5"
+              ]
+            },
+            "poster": {
+              "type": "string"
+            },
+            "autoplay": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "src"
+          ]
+        }
+      },
+      "required": [
+        "imageAlt"
+      ],
+      "additionalProperties": {}
+    },
+    "featuresSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": false,
+          "type": "boolean"
+        },
+        "bgShape": {
+          "type": "string"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "features"
+      ]
+    },
+    "faqSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        }
+      }
+    },
+    "aboutCompanySectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "imageSecondary": {
+          "type": "string"
+        },
+        "imageSecondaryAlt": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bgPatternImage": {
+          "type": "string"
+        },
+        "bgPatternImageAlt": {
+          "type": "string"
+        },
+        "sinceYear": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            },
+            "score": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "score",
+            "label"
+          ]
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        },
+        "founder": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "role",
+            "avatar"
+          ]
+        },
+        "experienceBadge": {
+          "type": "object",
+          "properties": {
+            "icon": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "value"
+          ]
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "title",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "image"
+      ]
+    },
+    "numbersSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "title",
+        "list"
+      ]
+    },
+    "ourServicesSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        },
+        "footerText": {
+          "type": "string"
+        },
+        "footerLink": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "url"
+          ]
+        },
+        "cardLayout": {
+          "type": "string",
+          "enum": [
+            "horizontal",
+            "accordion",
+            "card"
+          ]
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "featuresSplitSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "title",
+        "list"
+      ]
+    },
+    "workingProcessSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "title",
+        "list"
+      ]
+    },
+    "caseStudiesSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "number"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "cardLayout": {
+          "type": "string",
+          "enum": [
+            "case-studies"
+          ]
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "getInTouchSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "hero": {
+          "type": "object",
+          "properties": {
+            "image": {
+              "type": "string"
+            },
+            "imageAlt": {
+              "type": "string"
+            },
+            "taglineLeft": {
+              "type": "string"
+            },
+            "taglineRight": {
+              "type": "string"
+            },
+            "playLabel": {
+              "type": "string"
+            },
+            "video": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string",
+                  "enum": [
+                    "youtube",
+                    "vimeo",
+                    "html5"
+                  ]
+                },
+                "poster": {
+                  "type": "string"
+                },
+                "autoplay": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src"
+              ]
+            },
+            "button": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label"
+              ]
+            }
+          },
+          "required": [
+            "image"
+          ]
+        }
+      }
+    },
+    "customersSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "src",
+              "alt"
+            ]
+          }
+        }
+      },
+      "required": [
+        "list"
+      ]
+    },
+    "blogSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "number"
+        },
+        "cardLayout": {
+          "type": "string",
+          "enum": [
+            "card",
+            "horizontal",
+            "rounded",
+            "compact"
+          ]
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        }
+      }
+    },
+    "trustSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "appendValue": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "value",
+              "label"
+            ]
+          }
+        },
+        "bgPattern": {
+          "type": "string"
+        },
+        "bgImage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "stats"
+      ]
+    },
+    "marqueeTickerSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "items": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "marquee": {
+          "type": "object",
+          "properties": {
+            "elementWidth": {
+              "type": "string"
+            },
+            "elementWidthAuto": {
+              "default": true,
+              "type": "boolean"
+            },
+            "elementWidthInSmallDevices": {
+              "type": "string"
+            },
+            "pauseOnHover": {
+              "default": false,
+              "type": "boolean"
+            },
+            "reverse": {
+              "type": "string",
+              "enum": [
+                "reverse",
+                ""
+              ]
+            },
+            "duration": {
+              "default": "30s",
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "imageLight": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "items"
+      ]
+    },
+    "marqueeSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "marquee": {
+          "type": "object",
+          "properties": {
+            "elementWidth": {
+              "type": "string"
+            },
+            "elementWidthAuto": {
+              "default": true,
+              "type": "boolean"
+            },
+            "elementWidthInSmallDevices": {
+              "type": "string"
+            },
+            "pauseOnHover": {
+              "default": false,
+              "type": "boolean"
+            },
+            "reverse": {
+              "type": "string",
+              "enum": [
+                "reverse",
+                ""
+              ]
+            },
+            "duration": {
+              "default": "50s",
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "imageAlt": {
+              "type": "string"
+            },
+            "imageLight": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": [
+        "marquee"
+      ]
+    },
+    "whoWeAreSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "progressBars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "percentage": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "percentage"
+            ]
+          }
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "value",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "joinOurCommunitySectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "badge": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        },
+        "bgImage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "experienceSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "bgPattern": {
+          "type": "string"
+        },
+        "bgPatternAlt": {
+          "type": "string"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "variant": {
+                "default": "white",
+                "type": "string",
+                "enum": [
+                  "white",
+                  "primary"
+                ]
+              }
+            },
+            "required": [
+              "value",
+              "label"
+            ]
+          }
+        }
+      },
+      "required": [
+        "image",
+        "stats"
+      ]
+    },
+    "aboutHeroSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "breadcrumb": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ]
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "arrowBanner": {
+          "type": "string"
+        },
+        "spinningText": {
+          "type": "string"
+        },
+        "video": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "provider": {
+              "type": "string",
+              "enum": [
+                "youtube",
+                "vimeo",
+                "html5"
+              ]
+            },
+            "poster": {
+              "type": "string"
+            },
+            "autoplay": {
+              "type": "boolean"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "src"
+          ]
+        }
+      }
+    },
+    "aboutUsSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        },
+        "imageLeft": {
+          "type": "string"
+        },
+        "imageLeftAlt": {
+          "type": "string"
+        },
+        "imageRight": {
+          "type": "string"
+        },
+        "imageRightAlt": {
+          "type": "string"
+        },
+        "satisfactionClients": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": false,
+              "type": "boolean"
+            },
+            "avatars": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "avatarAlt": {
+              "type": "string"
+            },
+            "count": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "factSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "type": "string"
+              },
+              "appendValue": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "number",
+              "label"
+            ]
+          }
+        }
+      }
+    },
+    "successSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "progressBars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "percentage": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "label",
+              "percentage"
+            ]
+          }
+        }
+      }
+    },
+    "businessServiceSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "satisfactionClients": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "default": false,
+              "type": "boolean"
+            },
+            "avatars": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "avatarAlt": {
+              "type": "string"
+            },
+            "count": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            }
+          }
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "active": {
+                "default": false,
+                "type": "boolean"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "content"
+            ]
+          }
+        }
+      }
+    },
+    "officeLocationsSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": false,
+          "type": "boolean"
+        },
+        "locationTitle": {
+          "type": "string"
+        },
+        "mapLink": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "enable": {
+                "default": false,
+                "type": "boolean"
+              },
+              "title": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "imageAlt": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title"
+            ]
+          }
+        }
+      },
+      "required": [
+        "list"
+      ]
+    },
+    "serviceWorkSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "imageAlt": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "decorativeImage": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        }
+      }
+    },
+    "fourZeroFourSectionSchema": {
+      "type": "object",
+      "properties": {
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "tag": {
+              "type": "string",
+              "enum": [
+                "a",
+                "button"
+              ]
+            },
+            "url": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "rel": {
+              "type": "string"
+            },
+            "target": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "object",
+              "properties": {
+                "enable": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "right"
+                  ]
+                },
+                "className": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            "hoverEffect": {
+              "type": "string",
+              "enum": [
+                "text-flip",
+                "creative-fill",
+                "magnetic",
+                "magnetic-text-flip",
+                "none"
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "enum": [
+                "fill",
+                "outline",
+                "text",
+                "white"
+              ]
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": {}
+        },
+        "image": {
+          "type": "string"
+        }
+      }
+    },
+    "icon": {
+      "type": "string"
+    },
+    "imagePosition": {
+      "type": "string"
+    },
+    "image3": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

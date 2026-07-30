@@ -1,72 +1,75 @@
-// =============================================================================
-// Myelektra Website - Astro Configuration
-// =============================================================================
-// Purpose: Configure Astro with TinaCMS and Cloudflare Workers deployment
-// =============================================================================
+import mdx from "@astrojs/mdx";
+import cloudflare from "@astrojs/cloudflare";
+import remarkToc from "remark-toc";
+import { unified } from "@astrojs/markdown-remark";
+import sitemap from "@astrojs/sitemap";
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
+import rehypeExternalLinks from "rehype-external-links";
+import { enabledLanguages } from "./src/lib/utils/i18nUtils";
+import remarkParseContent from "./src/lib/utils/remarkParseContent";
+import config from "./.astro/config.generated.json";
+import fontsJson from "./src/config/fonts.json";
+import { generateAstroFontsConfig } from "./src/lib/utils/AstroFont";
 
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import cloudflare from '@astrojs/cloudflare';
-import tailwindcss from '@tailwindcss/vite';
+const fonts = generateAstroFontsConfig(fontsJson);
 
-// =============================================================================
-// Astro Configuration
-// =============================================================================
+let {
+  seo: { sitemap: sitemapConfig },
+  settings: {
+    multilingual: { showDefaultLangInUrl, defaultLanguage },
+  },
+} = config;
 
 export default defineConfig({
-  // Output: Server-side rendering for TinaCMS visual editing
-  output: 'server',
-
-  // Adapter: Cloudflare Workers
-  adapter: cloudflare(),
-
-  // Vite plugins
-  vite: {
-    plugins: [
-      // Tailwind CSS
-      tailwindcss(),
-    ],
-
-    // Optimize for production
-    build: {
-      cssCodeSplit: true,
-    },
+  site: config.site.baseUrl ? config.site.baseUrl : "http://examplesite.com",
+  trailingSlash: config.site.trailingSlash ? "always" : "never",
+  devToolbar: {
+    enabled: false,
   },
-
-  // Image optimization
   image: {
-    // Remote image patterns
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'files.catbox.moe',
-      },
-      {
-        protocol: 'https',
-        hostname: 'media.licdn.com',
-      },
-    ],
+    layout: "constrained",
   },
-
-  // Markdown configuration
-  markdown: {
-    shikiConfig: {
-      theme: 'github-dark',
+  fonts,
+  i18n: {
+    locales: enabledLanguages,
+    defaultLocale: defaultLanguage,
+    routing: {
+      prefixDefaultLocale: showDefaultLangInUrl,
     },
   },
-
-  // Integrations
+  output: "server",
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
   integrations: [
-    // React support for islands
+    sitemapConfig.enable ? sitemap() : null,
+    mdx(),
     react(),
   ],
-
-  // Server configuration for TinaCMS
-  server: {
-    port: 3000,
-    host: true,
+  markdown: {
+    processor: unified({
+      remarkPlugins: [
+        remarkParseContent,
+        remarkToc,
+      ],
+      rehypePlugins: [
+        [rehypeExternalLinks, { rel: "noopener noreferrer nofollow", target: "_blank" }],
+      ],
+    }),
+    shikiConfig: {
+      theme: "light-plus",
+      wrap: false,
+    },
   },
-
-  // Note: TINA_CLIENT_ID and TINA_TOKEN are read by TinaCMS directly from process.env
-  // Do NOT add them to env block — Astro strict mode will reject unrecognized keys
+  vite: {
+    logLevel: "error",
+    build: {
+      minify: true,
+    },
+    plugins: [tailwindcss()],
+  },
 });

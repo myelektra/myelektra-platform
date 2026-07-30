@@ -1,0 +1,78 @@
+---
+import Base from "@/layouts/Base.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import ContactSection from "@/components/sections/ContactSection.astro";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const meta = { title: 'Consultation', description: 'Book a free consultation with Myelektra.' };
+---
+
+<Base {...meta}>
+  <section class="section-light section-padding" style="background:linear-gradient(135deg, rgba(11,17,32,0.92), rgba(0,82,204,0.85));min-height:40vh;display:flex;align-items:center">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Book a Free Consultation</h1>
+      <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">Let's discuss your revenue goals and find the right solution for your business.</p>
+    </div>
+  </section>
+
+  <section class="py-20" style="background:#f8f9fc">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-3">
+          <div class="card">
+            <h2 class="text-2xl font-bold mb-2" style="color:#0B1120">Schedule Your Consultation</h2>
+            <p class="mb-6" style="color:rgba(11,17,32,0.6)">Fill in your details and we'll get back to you within 24 hours to schedule your free consultation.</p>
+            <form class="space-y-5" action="https://formsubmit.co/info@myelektra.com" method="POST">
+              <input type="hidden" name="_subject" value="New Consultation Booking" />
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">First Name *</label><input type="text" name="firstName" required class="w-full px-4 py-2.5 border rounded-lg" style="border-color:rgba(11,17,32,0.15)" /></div>
+                <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">Last Name *</label><input type="text" name="lastName" required class="w-full px-4 py-2.5 border rounded-lg" style="border-color:rgba(11,17,32,0.15)" /></div>
+              </div>
+              <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">Email *</label><input type="email" name="email" required class="w-full px-4 py-2.5 border rounded-lg" style="border-color:rgba(11,17,32,0.15)" /></div>
+              <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">Phone Number</label><input type="tel" name="phone" class="w-full px-4 py-2.5 border rounded-lg" style="border-color:rgba(11,17,32,0.15)" /></div>
+              <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">Company *</label><input type="text" name="company" required class="w-full px-4 py-2.5 border rounded-lg" style="border-color:rgba(11,17,32,0.15)" /></div>
+              <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">Interested Solution</label>
+                <select name="solution" class="w-full px-4 py-2.5 border rounded-lg bg-white" style="border-color:rgba(11,17,32,0.15)">
+                  <option value="">Select a solution</option>
+                  <option value="revenue-intelligence">Revenue Intelligence</option>
+                  <option value="pipeline-builder">Pipeline Builder</option>
+                  <option value="revenue-engine">Revenue Engine</option>
+                  <option value="ai-sales">AI Sales Transformation</option>
+                  <option value="fractional-revenue">Fractional Revenue Office</option>
+                  <option value="not-sure">Not Sure Yet</option>
+                </select>
+              </div>
+              <div><label class="block text-sm font-medium mb-1.5" style="color:#0B1120">Message</label><textarea name="message" rows="4" class="w-full px-4 py-2.5 border rounded-lg" style="border-color:rgba(11,17,32,0.15)" placeholder="Tell us about your revenue goals or challenges..."></textarea></div>
+              <button type="submit" class="w-full py-3 px-6 rounded-lg text-white font-semibold" style="background:#1877F2">Book Consultation</button>
+            </form>
+          </div>
+        </div>
+        <div class="lg:col-span-2">
+          <div class="card mb-6">
+            <h3 class="font-semibold mb-4" style="color:#0B1120">What to Expect</h3>
+            <ul class="space-y-3">
+              {['30-minute discovery call', 'Needs assessment and goal alignment', 'Solution recommendation', 'No obligation, no pressure'].map((item) => (
+                <li class="flex items-start">
+                  <span style="flex-shrink:0;width:24px;height:24px;background:rgba(24,119,242,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:10px;margin-top:2px" data-lucide="Check" style="width:14px;height:14px;color:#1877F2"></span>
+                  <span class="text-sm" style="color:rgba(11,17,32,0.6)">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="font-semibold mb-4" style="color:#0B1120">Prefer to Call?</h3>
+            <p class="text-sm mb-3" style="color:rgba(11,17,32,0.6)">Call us directly to schedule your consultation.</p>
+            <a href="tel:+622129636761" class="font-medium" style="color:#1877F2">+62 21 29636761 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+</Base>

@@ -1,0 +1,96 @@
+{
+  "site": {
+    "title": "Myelektra",
+    "description": "AI-powered revenue growth partner helping B2B companies build structured, measurable revenue systems.",
+    "tagline": "Revenue Growth Solutions for B2B Companies",
+    "baseUrl": "https://myelektra.com",
+    "logo": "/logo-myelektra.png",
+    "logoWhite": "/logo-myelektra.png",
+    "logoText": "Myelektra",
+    "logoWidth": "30px",
+    "logoHeight": "30px",
+    "trailingSlash": true,
+    "favicon": {
+      "image": "/favicon.svg"
+    }
+  },
+  "seo": {
+    "author": "Myelektra",
+    "keywords": [
+      "revenue growth",
+      "B2B sales",
+      "revenue intelligence",
+      "pipeline management",
+      "AI sales"
+    ],
+    "robots": "index, follow",
+    "robotsTxt": {
+      "enable": true,
+      "disallow": []
+    },
+    "sitemap": {
+      "enable": false,
+      "exclude": []
+    }
+  },
+  "contact": {
+    "location": "38th Floor, 88 Office, Kota Kasablanka, South Jakarta, Indonesia",
+    "phone": "+62 21 29636761",
+    "email": "info@myelektra.com"
+  },
+  "settings": {
+    "blogFolder": "blog",
+    "servicesFolder": "services",
+    "caseStudiesFolder": "case-studies",
+    "pagination": 2,
+    "stickyHeader": true,
+    "contactFormAction": "https://formsubmit.co/info@myelektra.com",
+    "contactFormProvider": "formsubmit.co",
+    "footerDescription": "",
+    "copyright": {
+      "enable": true,
+      "text": "Copyright © 2025 Myelektra. All Rights Reserved."
+    },
+    "subscription": {
+      "enable": false,
+      "title": "",
+      "formAction": ""
+    },
+    "multilingual": {
+      "enable": true,
+      "defaultLanguage": "en",
+      "disableLanguages": [
+        "fr"
+      ],
+      "showDefaultLangInUrl": false
+    },
+    "navigationButton": {
+      "enable": true,
+      "label": "",
+      "url": "/consultation"
+    },
+    "announcementBar": {
+      "enable": false,
+      "label": ""
+    },
+    "markup": {
+      "tableOfContents": {
+        "enable": false,
+        "expanded": false,
+        "endLevel": 5,
+        "ordered": false,
+        "startLevel": 1
+      }
+    }
+  },
+  "opengraph": {
+    "image": "/images/og-image.jpg",
+    "ogLocale": "en_US",
+    "ogType": "website",
+    "twitter": "",
+    "twitterCard": "summary_large_image"
+  },
+  "head": {
+    "content": ""
+  }
+}

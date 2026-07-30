@@ -1,0 +1,16 @@
+{
+  "main": [
+    {
+      "enable": true,
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/company/myelektra",
+      "weight": 1
+    },
+    {
+      "enable": true,
+      "label": "Instagram",
+      "url": "https://instagram.com/myelektra",
+      "weight": 2
+    }
+  ]
+}
