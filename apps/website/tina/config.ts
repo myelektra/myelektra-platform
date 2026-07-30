@@ -16,7 +16,8 @@ import { resolve } from 'path';
 // Load .env.local for local development
 // TinaCloud injects TINA_CLIENT_ID and TINA_TOKEN automatically
 if (process.env.NODE_ENV !== 'production') {
-  config({ path: resolve(process.cwd(), '.env.local') });
+  // .env.local is at project root, TinaCMS runs from apps/website/
+  config({ path: resolve(process.cwd(), '../../.env.local') });
 }
 
 // =============================================================================
