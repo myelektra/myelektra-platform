@@ -1,0 +1,163 @@
+fragment PageParts on Page {
+  __typename
+  title
+  description
+  ogImage
+  draft
+  body
+}
+
+fragment SolutionParts on Solution {
+  __typename
+  title
+  price
+  description
+  icon
+  isPopular
+  bestFor
+  cta
+  metaTitle
+  metaDescription
+  steps {
+    __typename
+    title
+    description
+  }
+  body
+}
+
+fragment IndustryParts on Industry {
+  __typename
+  title
+  description
+  icon
+  metaTitle
+  metaDescription
+  personas {
+    __typename
+    name
+    description
+  }
+  body
+}
+
+fragment NavigationParts on Navigation {
+  __typename
+  desktop {
+    __typename
+    label
+    path
+    submenu {
+      __typename
+      label
+      path
+    }
+  }
+  headerCta
+  headerCtaPath
+  hideFromNav
+}
+
+fragment BrandParts on Brand {
+  __typename
+  company
+  domain
+  tagline
+  subTagline
+  positioning
+  phone
+  email
+  address {
+    __typename
+    line1
+    line2
+    country
+  }
+  hours
+  social {
+    __typename
+    linkedin
+    instagram
+  }
+  founder {
+    __typename
+    name
+    title
+    photo
+    linkedin
+    instagram
+  }
+  logo {
+    __typename
+    file
+  }
+}
+
+fragment FooterParts on Footer {
+  __typename
+  columns {
+    __typename
+    title
+    type
+    links {
+      __typename
+      label
+      path
+      highlight
+    }
+  }
+  copyright
+}
+
+fragment GlobalParts on Global {
+  __typename
+  floatingCta {
+    __typename
+    text
+    buttonLabel
+    buttonPath
+    showAfterScrollPx
+  }
+  backToTop {
+    __typename
+    showAfterScrollPx
+  }
+  cookieBanner {
+    __typename
+    text
+    acceptLabel
+    learnMoreLabel
+  }
+  scrollAnimation {
+    __typename
+    enabled
+  }
+  disclaimer
+}
+
+fragment ClientLogoParts on ClientLogo {
+  __typename
+  title
+  logo
+  website
+  order
+}
+
+fragment CountryParts on Country {
+  __typename
+  title
+  flagAccent
+  personas {
+    __typename
+    name
+  }
+  order
+}
+
+fragment WhyMyelektraParts on WhyMyelektra {
+  __typename
+  title
+  description
+  icon
+  order
+}
